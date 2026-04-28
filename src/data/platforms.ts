@@ -18,7 +18,7 @@ export const platforms: Platform[] = [
     icon: Globe,
     description: "No installation. Start instantly in your browser.",
     cta: "Open Web App",
-    href: "#",
+    href: "https://tyntutor.netlify.app",
     recommended: true,
     badge: "Start Instantly",
   },

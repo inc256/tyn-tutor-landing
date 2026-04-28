@@ -40,12 +40,12 @@ const Downloads = () => {
                 }`}
               >
                 {isPrimary && (
-                  <span className="absolute top-4 right-4 inline-flex items-center px-2.5 py-0.5 rounded-full bg-white/20 text-xs font-semibold">
+                  <span className="absolute top-4 right-4 inline-flex items-center px-2.5 py-0.5 rounded-full bg-primary-foreground/20 text-xs font-semibold">
                     Recommended
                   </span>
                 )}
                 <div className={`grid place-items-center w-12 h-12 rounded-xl mb-5 ${
-                  isPrimary ? "bg-white/15" : "bg-gradient-primary text-primary-foreground shadow-glow"
+                  isPrimary ? "bg-primary-foreground/15" : "bg-gradient-primary text-primary-foreground shadow-glow"
                 }`}>
                   <Icon className="w-6 h-6" />
                 </div>
@@ -58,7 +58,7 @@ const Downloads = () => {
                 <Button
                   variant={isPrimary ? "secondary" : "hero"}
                   size="lg"
-                  className={`mt-6 w-full ${isPrimary ? "bg-white text-primary hover:bg-white/90" : ""}`}
+                  className={`mt-6 w-full ${isPrimary ? "bg-primary-foreground text-primary hover:bg-primary-foreground/90" : ""}`}
                   asChild
                 >
                   <a href={p.href}>
