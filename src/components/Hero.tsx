@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users } from "lucide-react";
 
@@ -53,7 +52,7 @@ const Hero = ({ onDownload }: HeroProps) => {
               <ArrowRight className="w-4 h-4" />
             </Button>
             <Button variant="soft" size="xl" asChild>
-              <Link to="/product">Try Web App</Link>
+              <a href="https://tyntutor.netlify.app" target="_blank" rel="noopener noreferrer">Try Web App</a>
             </Button>
           </motion.div>
 
@@ -92,7 +91,7 @@ const Hero = ({ onDownload }: HeroProps) => {
                   "Explain photosynthesis like I'm 12, then quiz me."
                 </p>
                 <div className="grid sm:grid-cols-3 gap-3 mt-6">
-                  {["Understand", "Organize", "Solve"].map((s, i) => (
+                  {["Understand", "Breakdown", "Solve"].map((s, i) => (
                     <motion.div
                       key={s}
                       animate={{ y: [0, -4, 0] }}
