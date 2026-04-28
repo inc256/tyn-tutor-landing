@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users } from "lucide-react";
 
@@ -20,10 +21,6 @@ const Hero = ({ onDownload }: HeroProps) => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-white/70 backdrop-blur text-xs font-medium text-primary shadow-sm">
-            <Sparkles className="w-3.5 h-3.5" />
-            Meet your AI study companion
-          </span>
 
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
@@ -56,7 +53,7 @@ const Hero = ({ onDownload }: HeroProps) => {
               <ArrowRight className="w-4 h-4" />
             </Button>
             <Button variant="soft" size="xl" asChild>
-              <a href="#product">Try Web App</a>
+              <Link to="/product">Try Web App</Link>
             </Button>
           </motion.div>
 
@@ -81,9 +78,9 @@ const Hero = ({ onDownload }: HeroProps) => {
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="rounded-2xl border border-border/60 bg-white/70 backdrop-blur-xl shadow-elevated p-2"
+            className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-xl shadow-elevated p-2"
           >
-            <div className="rounded-xl bg-gradient-to-br from-surface to-surface-2 p-6 md:p-10">
+            <div className="rounded-xl bg-gradient-to-br from-surface to-surface-2 p-6 md:p-10 dark:from-card dark:to-card/80">
               <div className="flex items-center gap-1.5 mb-6">
                 <span className="w-3 h-3 rounded-full bg-destructive/70" />
                 <span className="w-3 h-3 rounded-full bg-yellow-400/80" />
@@ -100,7 +97,7 @@ const Hero = ({ onDownload }: HeroProps) => {
                       key={s}
                       animate={{ y: [0, -4, 0] }}
                       transition={{ duration: 4 + i, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }}
-                      className="rounded-xl bg-white border border-border/60 p-4 shadow-soft"
+                      className="rounded-xl bg-card border border-border/60 p-4 shadow-soft"
                     >
                       <div className="text-xs text-muted-foreground">Step {i + 1}</div>
                       <div className="font-semibold mt-1">{s}</div>

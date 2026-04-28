@@ -89,7 +89,7 @@ const Pricing = () => {
               }`}
             >
               {p.popular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white text-primary text-xs font-semibold shadow-md">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 px-3 py-1 rounded-full bg-background text-primary text-xs font-semibold shadow-md border border-border">
                   <Sparkles className="w-3 h-3" /> Most Popular
                 </span>
               )}
@@ -114,7 +114,7 @@ const Pricing = () => {
                 {p.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm">
                     <span className={`mt-0.5 grid place-items-center w-5 h-5 rounded-full ${
-                      p.popular ? "bg-white/20" : "bg-primary/10 text-primary"
+                      p.popular ? "bg-primary-foreground/20" : "bg-primary/10 text-primary"
                     }`}>
                       <Check className="w-3 h-3" />
                     </span>
@@ -126,7 +126,7 @@ const Pricing = () => {
               <Button
                 variant={p.popular ? "secondary" : "hero"}
                 size="lg"
-                className={`mt-8 w-full ${p.popular ? "bg-white text-primary hover:bg-white/90" : ""}`}
+                className={`mt-8 w-full ${p.popular ? "bg-primary-foreground text-primary hover:bg-primary-foreground/90" : ""}`}
               >
                 Start Free Trial
               </Button>
