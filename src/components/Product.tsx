@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Brain, NotebookPen, Search, FileText, Workflow } from "lucide-react";
+import { Brain, Search, FileText, Workflow, Upload, Trophy } from "lucide-react";
 
 const features = [
   {
@@ -8,14 +8,19 @@ const features = [
     desc: "Explanations that feel like a patient human tutor, tailored to your level.",
   },
   {
-    icon: NotebookPen,
-    title: "Organize Notes",
-    desc: "Turn messy thoughts into structured, searchable notes automatically.",
+    icon: Upload,
+    title: "Upload Any Content",
+    desc: "From PDFs to PPTs and learn everything your way — upload your materials and get personalized learning.",
   },
   {
     icon: Search,
     title: "Smart Research",
     desc: "Summarize articles, papers, and videos into the points that matter.",
+  },
+  {
+    icon: Trophy,
+    title: "Quizzes",
+    desc: "Test yourself to see your progress — challenge your knowledge and track improvement.",
   },
   {
     icon: FileText,
@@ -45,7 +50,7 @@ const Product = () => {
             Everything you need to learn well
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Five focused tools that work together — so you spend more time learning and less time wrestling with apps.
+            Six focused tools that work together — so you spend more time learning and less time wrestling with apps.
           </p>
         </motion.div>
 

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import logo from '@/images/logo.png';
 
 const links = [
   { label: "Home", href: "/" },
@@ -11,6 +12,8 @@ const links = [
   { label: "Pricing", href: "/pricing" },
   { label: "Downloads", href: "/downloads" },
   { label: "Contact", href: "/contact" },
+  { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
 ];
 
 interface NavbarProps {
@@ -38,9 +41,7 @@ const Navbar = ({ onDownloadClick }: NavbarProps) => {
     >
       <nav className="container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2">
-          <span className="grid place-items-center w-9 h-9 rounded-xl bg-gradient-primary text-primary-foreground shadow-glow">
-            <Sparkles className="w-5 h-5" />
-          </span>
+          <img src={logo} alt="Tyn Tutor" className="w-9 h-9 rounded-xl shadow-glow" />
           <span className="font-display font-bold text-lg tracking-tight">Tyn Tutor</span>
         </Link>
 

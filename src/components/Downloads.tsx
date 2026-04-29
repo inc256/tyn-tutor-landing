@@ -55,17 +55,23 @@ const Downloads = () => {
                 }`}>
                   {isPrimary ? "No installation required — start instantly in your browser." : p.description}
                 </p>
-                <Button
-                  variant={isPrimary ? "secondary" : "hero"}
-                  size="lg"
-                  className={`mt-6 w-full ${isPrimary ? "bg-primary-foreground text-primary hover:bg-primary-foreground/90" : ""}`}
-                  asChild
-                >
-                  <a href={p.href}>
-                    {isPrimary ? "Open Now" : p.cta}
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                </Button>
+                {p.href === "#" ? (
+                  <Button variant="outline" size="lg" className="mt-6 w-full" disabled>
+                    Coming Soon
+                  </Button>
+                ) : (
+                  <Button
+                    variant={isPrimary ? "secondary" : "hero"}
+                    size="lg"
+                    className={`mt-6 w-full ${isPrimary ? "bg-primary-foreground text-primary hover:bg-primary-foreground/90" : ""}`}
+                    asChild
+                  >
+                    <a href={p.href} target="_blank" rel="noopener noreferrer">
+                      {isPrimary ? "Open Now" : p.cta}
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </Button>
+                )}
               </motion.div>
             );
           })}
