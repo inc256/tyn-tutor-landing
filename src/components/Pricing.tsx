@@ -40,7 +40,6 @@ const plans: Plan[] = [
     name: "Standard",
     price: "$3.26",
     tagline: "150 Credits",
-    popular: true,
     features: [
       "150 AI credits",
       "Full problem-solving flow",
@@ -63,6 +62,7 @@ const plans: Plan[] = [
     name: "Pro+ Monthly",
     price: "$4.07",
     period: "/ month",
+    popular: true,
     tagline: "300 Credits Monthly",
     features: [
       "300 credits every month",
