@@ -51,55 +51,15 @@ const DownloadModal = ({ open, onClose }: DownloadModalProps) => {
 
             <div className="p-6 md:p-10">
               <div className="text-center max-w-lg mx-auto">
-                <h3 className="font-display text-3xl md:text-4xl font-bold">Get Tyn Tutor</h3>
+                <h3 className="font-display text-3xl md:text-4xl font-bold">Coming Soon</h3>
                 <p className="mt-2 text-muted-foreground">
-                  Choose your platform. We recommend the Web app to start instantly.
+                  Tyn Tutor downloads are currently in development. Check back soon for native apps.
                 </p>
-              </div>
-
-              <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {platforms.map((p) => {
-                  const Icon = p.icon;
-                  const isPrimary = p.recommended;
-                  return (
-                    <div
-                      key={p.id}
-                      className={`relative rounded-2xl p-5 flex flex-col transition-all ${
-                        isPrimary
-                          ? "bg-gradient-primary text-primary-foreground shadow-glow"
-                          : "bg-card border border-border/70 hover:shadow-soft hover:-translate-y-0.5"
-                      }`}
-                    >
-                      {p.badge && (
-                        <span className="absolute top-3 right-3 inline-flex items-center px-2 py-0.5 rounded-full bg-white/20 text-[10px] font-semibold uppercase tracking-wider">
-                          {p.badge}
-                        </span>
-                      )}
-                      <div className={`grid place-items-center w-10 h-10 rounded-xl mb-4 ${
-                        isPrimary ? "bg-white/15" : "bg-accent text-primary"
-                      }`}>
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <div className="font-display font-semibold text-lg">{p.name}</div>
-                      <p className={`text-sm mt-1 flex-1 ${
-                        isPrimary ? "text-primary-foreground/85" : "text-muted-foreground"
-                      }`}>
-                        {p.description}
-                      </p>
-                      <Button
-                        size="sm"
-                        variant={isPrimary ? "secondary" : "default"}
-                        className={`mt-4 ${isPrimary ? "bg-white text-primary hover:bg-white/90" : ""}`}
-                        asChild
-                      >
-                        <a href={p.href}>
-                          {p.cta}
-                          <ArrowRight className="w-3.5 h-3.5" />
-                        </a>
-                      </Button>
-                    </div>
-                  );
-                })}
+                <div className="mt-8">
+                  <Button variant="outline" size="lg" className="w-full max-w-xs" disabled>
+                    Coming Soon
+                  </Button>
+                </div>
               </div>
             </div>
           </motion.div>

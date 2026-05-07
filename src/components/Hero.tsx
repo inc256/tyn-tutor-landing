@@ -27,8 +27,7 @@ const Hero = ({ onDownload }: HeroProps) => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-6 font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.05] tracking-tight"
           >
-            Learn Smarter.{" "}
-            <span className="text-gradient-primary">Think Faster.</span>
+            <span className="text-gradient-primary">Anything Explained.</span>
           </motion.h1>
 
           <motion.p
@@ -37,7 +36,7 @@ const Hero = ({ onDownload }: HeroProps) => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto"
           >
-            Tyn Tutor AI helps you understand, organize, and solve problems
+            Xplainfy AI helps you understand, organize, and solve problems
             like a real tutor — built for students who want clarity, not clutter.
           </motion.p>
 
@@ -86,7 +85,7 @@ const Hero = ({ onDownload }: HeroProps) => {
                 <span className="w-3 h-3 rounded-full bg-emerald-400/80" />
               </div>
               <div className="space-y-3">
-                <div className="text-xs uppercase tracking-wider text-primary font-semibold">Tyn Tutor</div>
+                <div className="text-xs uppercase tracking-wider text-primary font-semibold">Xplainfy</div>
                 <p className="font-display text-xl md:text-2xl font-semibold leading-snug">
                   "Explain photosynthesis like I'm 12, then quiz me."
                 </p>

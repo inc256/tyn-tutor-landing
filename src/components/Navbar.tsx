@@ -41,8 +41,8 @@ const Navbar = ({ onDownloadClick }: NavbarProps) => {
     >
       <nav className="container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Tyn Tutor" className="w-9 h-9 rounded-xl shadow-glow" />
-          <span className="font-display font-bold text-lg tracking-tight">Tyn Tutor</span>
+          <img src={logo} alt="Xplainfy" className="w-9 h-9 rounded-xl shadow-glow" />
+          <span className="font-display font-bold text-lg tracking-tight">Xplainfy</span>
         </Link>
 
         <ul className="hidden md:flex items-center gap-1">

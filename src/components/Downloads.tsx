@@ -15,7 +15,7 @@ const Downloads = () => {
           className="max-w-2xl mx-auto text-center"
         >
           <span className="text-sm font-semibold uppercase tracking-wider text-primary">Downloads</span>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">Download Tyn Tutor</h2>
+          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">Download Xplainfy</h2>
           <p className="mt-4 text-muted-foreground text-lg">
             Available everywhere you study. Pick your platform and get started in seconds.
           </p>
