@@ -36,8 +36,13 @@ const Hero = ({ onDownload }: HeroProps) => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto"
           >
-            Xplainfy AI helps you understand, organize, and solve problems
-            like a real tutor — built for students who want clarity, not clutter.
+            Xplainfy is an AI-powered system designed to help you understand, research,
+            and solve problems through structured, step-by-step explanations.
+            <br className="hidden sm:block" />
+            <span className="font-semibold text-foreground">
+              Perfect for engineers, professionals, researchers, educators, medical personnel,
+              and anyone who needs clarity over confusion.
+            </span>
           </motion.p>
 
           <motion.div
@@ -51,19 +56,19 @@ const Hero = ({ onDownload }: HeroProps) => {
               <ArrowRight className="w-4 h-4" />
             </Button>
             <Button variant="soft" size="xl" asChild>
-              <a href="https://tyntutor.netlify.app" target="_blank" rel="noopener noreferrer">Try Web App</a>
+              <a href="https://xplainfy.vercel.app" target="_blank" rel="noopener noreferrer">Try Web App</a>
             </Button>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-8 inline-flex items-center gap-2 text-sm text-muted-foreground"
-          >
-            <Users className="w-4 h-4" />
-            Used by students and self-learners worldwide
-          </motion.div>
+           <motion.div
+             initial={{ opacity: 0 }}
+             animate={{ opacity: 1 }}
+             transition={{ duration: 0.8, delay: 0.5 }}
+             className="mt-8 inline-flex items-center gap-2 text-sm text-muted-foreground"
+           >
+             <Users className="w-4 h-4" />
+             Used by engineers, researchers, educators, medical professionals, and lifelong learners worldwide
+           </motion.div>
         </motion.div>
 
         {/* Floating preview card */}

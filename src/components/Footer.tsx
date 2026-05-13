@@ -11,9 +11,9 @@ const Footer = () => {
             <img src={logo} alt="Xplainfy" className="w-9 h-9 rounded-xl shadow-glow" />
             <span className="font-display font-bold text-lg">Xplainfy</span>
           </Link>
-          <p className="mt-3 text-sm text-muted-foreground max-w-xs">
-            Anything Explained — your AI study companion.
-          </p>
+           <p className="mt-3 text-sm text-muted-foreground max-w-xs">
+             Structured understanding for engineers, researchers, educators, medical professionals, and business leaders.
+           </p>
         </div>
 
         <div>
@@ -34,12 +34,12 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="border-t border-border/60">
-        <div className="container py-6 text-xs text-muted-foreground flex flex-col sm:flex-row items-center justify-between gap-2">
-          <span>© {new Date().getFullYear()} Xplainfy. All rights reserved.</span>
-          <span>Made for curious minds.</span>
-        </div>
-      </div>
+         <div className="border-t border-border/60">
+         <div className="container py-6 text-xs text-muted-foreground flex flex-col sm:flex-row items-center justify-between gap-2">
+           <span>© {new Date().getFullYear()} Xplainfy. All rights reserved.</span>
+           <span>Clarity for every professional.</span>
+         </div>
+       </div>
     </footer>
   );
 };

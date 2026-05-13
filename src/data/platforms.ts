@@ -18,7 +18,7 @@ export const platforms: Platform[] = [
     icon: Globe,
     description: "No installation. Start instantly in your browser.",
     cta: "Open Web App",
-    href: "https://tyntutor.netlify.app",
+     href: "https://xplainfy.vercel.app",
     recommended: true,
     badge: "Start Instantly",
   },

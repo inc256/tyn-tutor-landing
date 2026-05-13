@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import InsightsSection from "@/components/InsightsSection";
 import Footer from "@/components/Footer";
 import DownloadModal from "@/components/DownloadModal";
 
