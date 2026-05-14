@@ -51,12 +51,12 @@ const Hero = ({ onDownload }: HeroProps) => {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3"
           >
-            <Button variant="hero" size="xl" onClick={onDownload}>
+            {/* <Button variant="hero" size="xl" onClick={onDownload}>
               Download Now
               <ArrowRight className="w-4 h-4" />
-            </Button>
+            </Button> */}
             <Button variant="soft" size="xl" asChild>
-              <a href="https://app.xplainfy.net" target="_blank" rel="noopener noreferrer">Try Web App</a>
+              <a href="https://app.xplainfy.net" target="_blank" rel="noopener noreferrer">Try Now</a>
             </Button>
           </motion.div>
 
