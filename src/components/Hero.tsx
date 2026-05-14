@@ -56,7 +56,7 @@ const Hero = ({ onDownload }: HeroProps) => {
               <ArrowRight className="w-4 h-4" />
             </Button> */}
             <Button variant="soft" size="xl" asChild>
-              <a href="https://app.xplainfy.net" target="_blank" rel="noopener noreferrer">Try Now</a>
+              <a href="https://app.xplainfy.net" target="_blank" rel="noopener noreferrer">Go to App</a>
             </Button>
           </motion.div>
 
