@@ -38,11 +38,6 @@ const Hero = ({ onDownload }: HeroProps) => {
           >
             Xplainfy is an AI-powered system designed to help you understand, research,
             and solve problems through structured, step-by-step explanations.
-            <br className="hidden sm:block" />
-            <span className="font-semibold text-foreground">
-              Perfect for engineers, professionals, researchers, educators, medical personnel,
-              and anyone who needs clarity over confusion.
-            </span>
           </motion.p>
 
           <motion.div
@@ -92,7 +87,7 @@ const Hero = ({ onDownload }: HeroProps) => {
               <div className="space-y-3">
                 <div className="text-xs uppercase tracking-wider text-primary font-semibold">Xplainfy</div>
                 <p className="font-display text-xl md:text-2xl font-semibold leading-snug">
-                  "Explain photosynthesis like I'm 12, then quiz me."
+                  "Explain photosynthesis."
                 </p>
                 <div className="grid sm:grid-cols-3 gap-3 mt-6">
                   {["Understand", "Breakdown", "Solve"].map((s, i) => (

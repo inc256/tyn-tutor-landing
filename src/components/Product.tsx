@@ -27,16 +27,16 @@ const features = [
     title: "Editable AI Outputs",
     desc: "Take full control: modify, refine, or regenerate any response. You're always in charge of the final result.",
   },
-  {
-    icon: Shield,
-    title: "Privacy-First",
-    desc: "Optional privacy mode disables data storage—your information stays private with no history saved when you choose.",
-  },
-  {
-    icon: CreditCard,
-    title: "Transparent Credits",
-    desc: "Simple, predictable usage model. Credits are spent per action—no hidden fees or surprise charges.",
-  },
+  // {
+  //   icon: Shield,
+  //   title: "Privacy-First",
+  //   desc: "Optional privacy mode disables data storage—your information stays private with no history saved when you choose.",
+  // },
+  // {
+  //   icon: CreditCard,
+  //   title: "Transparent Credits",
+  //   desc: "Simple, predictable usage model. Credits are spent per action—no hidden fees or surprise charges.",
+  // },
   {
     icon: Globe,
     title: "Cross-Platform",

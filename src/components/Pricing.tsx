@@ -24,12 +24,12 @@ type Plan = {
 
 const plans: Plan[] = [
   {
-    name: "Free",
-    price: "Free",
+    name: "Trial",
+    price: "Free / 30 days",
     tagline: "Trying out Xplainfy",
     description: "Get started with basic AI explanations",
     features: [
-      "20 daily credits",
+      "20 daily credits for 30 days",
       "Standard AI explanations",
       "Basic AI assistance",
       "Standard response speed",
