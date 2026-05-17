@@ -1,12 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Users } from "lucide-react";
+import { Users, Globe, Smartphone, ArrowRight } from "lucide-react";
 
-interface HeroProps {
-  onDownload: () => void;
-}
-
-const Hero = ({ onDownload }: HeroProps) => {
+const Hero = () => {
   return (
     <section id="home" className="relative pt-28 md:pt-36 pb-20 md:pb-28 overflow-hidden bg-gradient-hero">
       {/* Decorative blurred orbs */}
@@ -44,14 +40,30 @@ const Hero = ({ onDownload }: HeroProps) => {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3"
+            className="mt-10 grid sm:grid-cols-2 gap-3 max-w-md mx-auto"
           >
-            {/* <Button variant="hero" size="xl" onClick={onDownload}>
-              Download Now
-              <ArrowRight className="w-4 h-4" />
-            </Button> */}
-            <Button variant="soft" size="xl" asChild>
-              <a href="https://app.xplainfy.net" target="_blank" rel="noopener noreferrer">Go to App</a>
+            <Button
+              variant="soft"
+              size="xl"
+              asChild
+              className="bg-card border border-border/70 shadow-soft hover:shadow-elevated text-foreground"
+            >
+              <a href="https://app.xplainfy.net" target="_blank" rel="noopener noreferrer">
+                <Globe className="w-5 h-5" />
+                Web App
+              </a>
+            </Button>
+            <Button
+              variant="soft"
+              size="xl"
+              asChild
+              className="bg-card border border-border/70 shadow-soft hover:shadow-elevated text-foreground"
+            >
+              <a href="/releases/app-release.apk" download>
+                <Smartphone className="w-5 h-5" />
+                Android
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </Button>
           </motion.div>
 

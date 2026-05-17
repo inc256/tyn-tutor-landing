@@ -17,7 +17,7 @@ const links = [
 ];
 
 interface NavbarProps {
-  onDownloadClick: () => void;
+  onDownloadClick?: () => void;
 }
 
 const Navbar = ({ onDownloadClick }: NavbarProps) => {
@@ -60,9 +60,6 @@ const Navbar = ({ onDownloadClick }: NavbarProps) => {
 
         <div className="hidden md:flex items-center gap-2">
           <ThemeToggle />
-          <Button variant="hero" size="lg" onClick={onDownloadClick}>
-            Download
-          </Button>
         </div>
 
         <button
@@ -93,11 +90,8 @@ const Navbar = ({ onDownloadClick }: NavbarProps) => {
                   {l.label}
                 </Link>
               ))}
-              <div className="mt-2 flex items-center gap-2">
+              <div className="mt-2">
                 <ThemeToggle />
-                <Button variant="hero" size="lg" onClick={() => { setOpen(false); onDownloadClick(); }}>
-                  Download
-                </Button>
               </div>
             </div>
           </motion.div>

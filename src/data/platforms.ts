@@ -34,9 +34,9 @@ export const platforms: Platform[] = [
     id: "android",
     name: "Android",
     icon: Smartphone,
-    description: "Get the Android app on Google Play.",
+    description: "Download the Android APK directly.",
     cta: "Download APK",
-    href: "#",
+    href: "/releases/app-release.apk",
   },
   {
     id: "ios",

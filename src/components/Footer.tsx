@@ -24,15 +24,6 @@ const Footer = () => {
             <li><Link to="/downloads" className="hover:text-foreground">Downloads</Link></li>
           </ul>
         </div>
-
-        <div>
-          <div className="text-sm font-semibold mb-3">Company</div>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/contact" className="hover:text-foreground">Contact</Link></li>
-            <li><Link to="/privacy" className="hover:text-foreground">Privacy</Link></li>
-            <li><Link to="/terms" className="hover:text-foreground">Terms</Link></li>
-          </ul>
-        </div>
       </div>
          <div className="border-t border-border/60">
          <div className="container py-6 text-xs text-muted-foreground flex flex-col sm:flex-row items-center justify-between gap-2">

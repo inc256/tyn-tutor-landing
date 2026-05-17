@@ -55,7 +55,7 @@ const Downloads = () => {
                 }`}>
                   {isPrimary ? "No installation required — start instantly in your browser." : p.description}
                 </p>
-                {p.href === "#" ? (
+                 {p.href === "#" ? (
                   <Button variant="outline" size="lg" className="mt-6 w-full" disabled>
                     Coming Soon
                   </Button>
