@@ -11,9 +11,7 @@ const links = [
   { label: "Product", href: "/product" },
   { label: "Pricing", href: "/pricing" },
   { label: "Downloads", href: "/downloads" },
-  // { label: "Contact", href: "/contact" },
-  // { label: "Privacy", href: "/privacy" },
-  // { label: "Terms", href: "/terms" },
+  { label: "Contact", href: "/contact" },
 ];
 
 interface NavbarProps {

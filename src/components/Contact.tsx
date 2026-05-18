@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Instagram, Music, MessageCircle } from "lucide-react";
+import { Instagram, Music, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Contact = () => {
@@ -30,27 +30,21 @@ const Contact = () => {
         >
           <div className="grid grid-cols-2 gap-4">
             <Button variant="outline" size="lg" asChild>
-              <a href="mailto:hello@tyntutor.app" className="flex items-center gap-2">
-                <Mail className="w-5 h-5" />
-                Email
-              </a>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="https://instagram.com/tyntutor" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              <a href="https://www.instagram.com/xplainfy_ai/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <Instagram className="w-5 h-5" />
                 Instagram
               </a>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="https://tiktok.com/@tyntutor" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              <a href="https://www.tiktok.com/@xplainfy_ai" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <Music className="w-5 h-5" />
                 TikTok
               </a>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                <MessageCircle className="w-5 h-5" />
-                WhatsApp
+              <a href="https://www.youtube.com/@xplainfy" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <Youtube className="w-5 h-5" />
+                YouTube
               </a>
             </Button>
           </div>
