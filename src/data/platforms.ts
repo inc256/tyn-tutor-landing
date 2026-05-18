@@ -30,14 +30,14 @@ export const platforms: Platform[] = [
     cta: "Download .exe",
     href: "#",
   },
-  {
-    id: "android",
-    name: "Android",
-    icon: Smartphone,
-    description: "Download the Android APK directly.",
-    cta: "Download APK",
-    href: "/releases/app-release.apk",
-  },
+    {
+      id: "android",
+      name: "Android",
+      icon: Smartphone,
+      description: "Download the Android APK directly.",
+      cta: "Download APK",
+      href: "https://www.mediafire.com/file/bq4j7q0jklokld7/app-release.apk/file",
+    },
   {
     id: "ios",
     name: "iOS",
