@@ -59,7 +59,11 @@ const Hero = () => {
               asChild
               className="bg-card border border-border/70 shadow-soft hover:shadow-elevated text-foreground"
             >
-              <a href="/releases/app-release.apk" download>
+              <a
+                href="https://www.mediafire.com/file/bq4j7q0jklokld7/app-release.apk/file"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Smartphone className="w-5 h-5" />
                 Android
                 <ArrowRight className="w-4 h-4" />
