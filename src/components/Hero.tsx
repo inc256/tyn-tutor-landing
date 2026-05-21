@@ -89,38 +89,6 @@ const Hero = () => {
           transition={{ duration: 0.9, delay: 0.4 }}
           className="relative mx-auto mt-16 max-w-4xl"
         >
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-xl shadow-elevated p-2"
-          >
-            <div className="rounded-xl bg-gradient-to-br from-surface to-surface-2 p-6 md:p-10 dark:from-card dark:to-card/80">
-              <div className="flex items-center gap-1.5 mb-6">
-                <span className="w-3 h-3 rounded-full bg-destructive/70" />
-                <span className="w-3 h-3 rounded-full bg-yellow-400/80" />
-                <span className="w-3 h-3 rounded-full bg-emerald-400/80" />
-              </div>
-              <div className="space-y-3">
-                <div className="text-xs uppercase tracking-wider text-primary font-semibold">Xplainfy</div>
-                <p className="font-display text-xl md:text-2xl font-semibold leading-snug">
-                  "Explain photosynthesis."
-                </p>
-                <div className="grid sm:grid-cols-3 gap-3 mt-6">
-                  {["Understand", "Breakdown", "Solve"].map((s, i) => (
-                    <motion.div
-                      key={s}
-                      animate={{ y: [0, -4, 0] }}
-                      transition={{ duration: 4 + i, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }}
-                      className="rounded-xl bg-card border border-border/60 p-4 shadow-soft"
-                    >
-                      <div className="text-xs text-muted-foreground">Step {i + 1}</div>
-                      <div className="font-semibold mt-1">{s}</div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>

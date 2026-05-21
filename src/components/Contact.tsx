@@ -48,9 +48,6 @@ const Contact = () => {
               </a>
             </Button>
           </div>
-          <p className="mt-8 text-center text-muted-foreground">
-            Developed by Luna Inc
-          </p>
         </motion.div>
       </div>
     </section>
