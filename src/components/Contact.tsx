@@ -49,7 +49,7 @@ const Contact = () => {
       // Fallback to mailto if there is no backend
       const subject = encodeURIComponent("Contact from website: " + name);
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-      window.location.href = `mailto:hello@example.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:lunainc256@gmail.com?subject=${subject}&body=${body}`;
     } finally {
       setSending(false);
     }

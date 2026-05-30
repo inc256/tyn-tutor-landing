@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Check, X, Sparkles, Zap, Rocket, Crown, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -199,14 +200,15 @@ const Pricing = () => {
                     </div>
                   )}
 
-     <Button
-       variant={p.popular ? "default" : "outline"}
-       className={`w-full mt-6 ${
-         p.popular ? "bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700" : ""
-       }`}
-     >
-       {p.name === "Free" ? "Get Started" : `Get ${p.name}`}
-     </Button>
+                  <Button
+                    asChild
+                    variant={p.popular ? "default" : "outline"}
+                    className={`w-full mt-6 ${
+                      p.popular ? "bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700" : ""
+                    }`}
+                  >
+                    <Link to="/downloads">Get {p.name}</Link>
+                  </Button>
                 </div>
               </motion.div>
             ))}
