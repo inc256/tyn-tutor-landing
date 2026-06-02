@@ -53,7 +53,7 @@ const Hero = () => {
                 Web App
               </a>
             </Button>
-            <Button
+            {/* <Button
               variant="soft"
               size="xl"
               asChild
@@ -68,7 +68,7 @@ const Hero = () => {
                 Android
                 <ArrowRight className="w-4 h-4" />
               </a>
-            </Button>
+            </Button> */}
           </motion.div>
 
            <motion.div
