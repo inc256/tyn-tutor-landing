@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# Xplainfy — Anything Explained
 
-TODO: Document your project here
+Xplainfy AI helps you understand, organize, and solve problems like a real tutor.
