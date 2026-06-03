@@ -28,14 +28,14 @@ const plans: Plan[] = [
     name: "Trial",
     price: "Free / 30 days",
     tagline: "Trying out Xplainfy",
-    description: "Get started with basic AI explanations",
+    description: "Start with core reasoning workflows and basic report generation.",
     features: [
       "20 daily credits for 30 days",
-      "Standard AI explanations",
-      "Basic AI assistance",
+      "Structured question framing",
+      "Basic workflow summaries",
       "Standard response speed",
       "Limited document uploads",
-      "Basic exports",
+      "Basic export options",
     ],
     icon: <Zap className="w-5 h-5" />,
     color: "from-slate-500 to-slate-600",
@@ -45,13 +45,13 @@ const plans: Plan[] = [
     price: "$4",
     period: "one-time",
     tagline: "1,000 Credits",
-    description: "Flexible credit-based usage",
+    description: "A flexible plan for teams testing structured reasoning workflows.",
     features: [
       "1000 credits (one-time)",
-      "Basic & intermediate research",
-      "Presentation generation",
-      "PDF & document exports",
-      "Citation support",
+      "Expanded research depth",
+      "Detailed report exports",
+      "Document analysis support",
+      "Citation-aware summaries",
       "Faster response speed",
     ],
     limitations: ["Credits are consumable"],
@@ -63,13 +63,13 @@ const plans: Plan[] = [
     price: "$9",
     period: "/ month",
     tagline: "Unlimited",
-    description: "Daily productivity & research",
+    description: "A plan for professionals who need daily research, reasoning, and report-ready insights.",
     features: [
       "Unlimited standard usage",
-      "Advanced Research",
-      "Better AI reasoning",
+      "Advanced evidence research",
+      "Enhanced reasoning workflows",
       "Deep document analysis",
-      "Presentation generation",
+      "Report generation",
       "Priority response queue",
     ],
     popular: true,
@@ -81,7 +81,7 @@ const plans: Plan[] = [
     price: "$20",
     period: "/ month",
     tagline: "Maximum AI Power",
-    description: "Advanced workflows & AI image responses",
+    description: "Maximum research power for teams that need deep context and premium reasoning output.",
     features: [
       "AI image-powered responses",
       "Long-context processing",
@@ -128,10 +128,10 @@ const Pricing = () => {
           >
             <span className="text-sm font-semibold uppercase tracking-wider text-primary">Pricing</span>
             <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">
-              Simple. Powerful. Built for modern AI research
+              Plans built around research, reasoning, and report workflows
             </h2>
             <p className="mt-4 text-muted-foreground text-lg">
-              Choose the plan that fits your workflow
+              Select the tier that matches your decision-making needs and output volume.
             </p>
           </motion.div>
 

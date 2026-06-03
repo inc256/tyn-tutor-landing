@@ -2,37 +2,68 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const sections = [
+  { id: "introduction", label: "Introduction" },
+  { id: "about", label: "About Xplainfy" },
+  { id: "information", label: "Information We Collect" },
+  { id: "use", label: "How We Use Your Information" },
+  { id: "ai-processing", label: "AI Processing" },
+  { id: "payments", label: "Payments" },
+  { id: "cookies", label: "Analytics and Cookies" },
+  { id: "storage", label: "Data Sharing and Storage" },
+  { id: "rights", label: "Your Rights" },
+  { id: "children", label: "Children's Privacy" },
+  { id: "retention", label: "Data Retention & Changes" },
+  { id: "contact", label: "Contact Us" },
+];
+
 const PrivacyPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar onDownloadClick={() => {}} />
       <main>
         <section className="py-24 md:py-32">
-          <div className="container">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-4xl mx-auto"
-            >
-              <div className="text-center mb-16">
-                <span className="text-sm font-semibold uppercase tracking-wider text-primary">Legal</span>
-                <h1 className="mt-3 font-display text-4xl md:text-5xl font-bold">Xplainfy Privacy Policy</h1>
-                <p className="mt-4 text-muted-foreground text-lg">
-                  How we respect your privacy and protect your personal information.
-                </p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Last updated: May 30, 2026
-                </p>
-              </div>
+          <div className="container grid gap-12 lg:grid-cols-[260px_1fr]">
+            <aside className="hidden lg:block sticky top-24 self-start rounded-3xl border border-border/70 bg-card p-6 shadow-soft">
+              <div className="text-sm font-semibold uppercase tracking-wider text-primary mb-4">Privacy navigation</div>
+              <nav className="space-y-3 text-sm text-muted-foreground">
+                {sections.map((section) => (
+                  <a
+                    key={section.id}
+                    href={`#${section.id}`}
+                    className="block rounded-2xl px-3 py-2 transition hover:bg-primary/10 hover:text-foreground"
+                  >
+                    {section.label}
+                  </a>
+                ))}
+              </nav>
+            </aside>
+
+            <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="max-w-4xl"
+              >
+                <div className="text-center mb-16">
+                  <span className="text-sm font-semibold uppercase tracking-wider text-primary">Legal</span>
+                  <h1 className="mt-3 font-display text-4xl md:text-5xl font-bold">Xplainfy Privacy Policy</h1>
+                  <p className="mt-4 text-muted-foreground text-lg">
+                    How we respect your privacy and protect your personal information.
+                  </p>
+                  <p className="mt-2 text-sm text-muted-foreground">Last updated: May 30, 2026</p>
+                </div>
+              </motion.div>
 
               <div className="space-y-12">
                 <motion.div
+                  id="introduction"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">Introduction</h2>
                   <p className="text-muted-foreground leading-relaxed">
@@ -41,11 +72,12 @@ const PrivacyPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="about"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">About Xplainfy</h2>
                   <p className="text-muted-foreground leading-relaxed">
@@ -54,18 +86,19 @@ const PrivacyPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="information"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">Information We Collect</h2>
                   <div className="space-y-6">
                     <div>
                       <h3 className="text-lg font-medium mb-2">Information You Provide</h3>
                       <ul className="text-muted-foreground leading-relaxed space-y-2 ml-6 list-disc">
-                        <li>Name and Email address</li>
+                        <li>Name and email address</li>
                         <li>Profile picture</li>
                         <li>Account credentials</li>
                       </ul>
@@ -83,11 +116,12 @@ const PrivacyPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="use"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.25 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">How We Use Your Information</h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">We use your information to:</p>
@@ -102,11 +136,12 @@ const PrivacyPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="ai-processing"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">AI Processing</h2>
                   <p className="text-muted-foreground leading-relaxed">
@@ -115,15 +150,16 @@ const PrivacyPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="payments"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.4 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">Payments</h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    For paid services, payments may be processed through Stripe, MTN Mobile Money, or Airtel Money, facilitated via MakyPay. 
+                    For paid services, payments may be processed through Stripe, MTN Mobile Money, or Airtel Money, facilitated via MakyPay.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
                     Xplainfy does not store full payment card information; payment providers process transaction details according to their own privacy policies.
@@ -131,11 +167,12 @@ const PrivacyPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="cookies"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.45 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">Analytics and Cookies</h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">We use:</p>
@@ -150,11 +187,12 @@ const PrivacyPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="storage"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.5 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">Data Sharing and Storage</h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">We do not sell, rent, or trade your personal information.</p>
@@ -167,11 +205,12 @@ const PrivacyPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="rights"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.55 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">Your Rights</h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">You may:</p>
@@ -185,11 +224,12 @@ const PrivacyPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="children"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.6 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">Children's Privacy</h2>
                   <p className="text-muted-foreground leading-relaxed">
@@ -198,11 +238,12 @@ const PrivacyPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="retention"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.65 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">Data Retention & Changes</h2>
                   <div className="space-y-4">
@@ -216,11 +257,12 @@ const PrivacyPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="contact"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">Contact Us</h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">
@@ -232,7 +274,7 @@ const PrivacyPage = () => {
                   </div>
                 </motion.div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       </main>

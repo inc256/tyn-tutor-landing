@@ -1,46 +1,42 @@
 import { motion } from "framer-motion";
-import { Brain, Search, FileText, Workflow, Upload, Shield, CreditCard, Globe, Edit3 } from "lucide-react";
+import { Brain, Search, FileText, Workflow, Globe, Edit3 } from "lucide-react";
 
 const features = [
   {
     icon: Brain,
-    title: "Problem Explanation",
-    desc: "Guided thinking system that breaks complex problems into clear, logical steps—teaching you how to think, not just what to think.",
+    title: "Problem Framing",
+    desc: "Stop starting with vague questions. Xplainfy turns complexity into a precise, actionable problem statement.",
+    preview: "Clear question framing and objective definition",
   },
   {
     icon: Search,
-    title: "Structured Research",
-    desc: "Transforms scattered information into organized insights with clear focus, key questions, and logical summaries for any field.",
+    title: "Evidence Research",
+    desc: "Instead of scattered notes, gather and summarize the right sources to support every claim.",
+    preview: "Verified research briefs and insight summaries",
   },
   {
     icon: Workflow,
-    title: "Step-by-Step Solutions",
-    desc: "Builds solutions progressively with full reasoning—each step explained, each decision justified, culminating in a complete, accurate output.",
+    title: "Guided Reasoning",
+    desc: "Every step is checked, compared, and documented so conclusions are not just plausible, but defensible.",
+    preview: "Logical decision pathways and explanation trails",
   },
   {
     icon: FileText,
-    title: "Full Report Generation",
-    desc: "Combines analysis, explanations, and conclusions into professional reports ready for decision-making, presentations, or deep study.",
+    title: "Actionable Solutions",
+    desc: "Convert reasoning into clear recommendations, plans, or decisions ready for execution.",
+    preview: "Structured solution outlines and next-step guidance",
   },
   {
     icon: Edit3,
-    title: "Editable AI Outputs",
-    desc: "Take full control: modify, refine, or regenerate any response. You're always in charge of the final result.",
+    title: "Report Generation",
+    desc: "Produce polished summaries that capture findings, logic, and outcomes in one shareable document.",
+    preview: "Executive-ready reports with full context",
   },
-  // {
-  //   icon: Shield,
-  //   title: "Privacy-First",
-  //   desc: "Optional privacy mode disables data storage—your information stays private with no history saved when you choose.",
-  // },
-  // {
-  //   icon: CreditCard,
-  //   title: "Transparent Credits",
-  //   desc: "Simple, predictable usage model. Credits are spent per action—no hidden fees or surprise charges.",
-  // },
   {
     icon: Globe,
-    title: "Cross-Platform",
-    desc: "Seamless experience across mobile, desktop, and web. A consistent, productive interface everywhere you work.",
+    title: "Workflow Continuity",
+    desc: "Keep the entire process connected across devices so nothing gets lost between research, reasoning, and reporting.",
+    preview: "Consistent workflow across web, desktop, and mobile",
   },
 ];
 
@@ -55,33 +51,35 @@ const Product = () => {
           transition={{ duration: 0.6 }}
           className="max-w-2xl mx-auto text-center"
         >
-          <span className="text-sm font-semibold uppercase tracking-wider text-primary">Built for Clarity</span>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">
-            Eight powerful tools for any professional
+          <span className="text-sm font-semibold uppercase tracking-wider text-primary">Workflow stages</span>
+          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold tracking-tight">
+            Every stage is designed to move you from question to decision.
           </h2>
-          <p className="mt-4 text-muted-foreground text-lg">
-            Xplainfy combines guided thinking, structured research, and step-by-step solutions into one seamless workflow.
-            Built for engineers, teachers, researchers, medical professionals, business owners, students—anyone who values understanding over guesswork.
+          <p className="mt-4 text-muted-foreground text-lg leading-relaxed">
+            See how Xplainfy turns complex problems into evidence-backed reasoning, actionable solutions, and polished reports.
           </p>
         </motion.div>
 
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((f, i) => (
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map((feature, i) => (
             <motion.div
-              key={f.title}
+              key={feature.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.06 }}
+              transition={{ duration: 0.5, delay: i * 0.05 }}
               whileHover={{ y: -6 }}
-              className="group relative rounded-2xl border border-border/70 bg-card p-6 shadow-soft hover:shadow-elevated transition-all duration-500"
+              className="group flex h-full flex-col rounded-3xl border border-border/70 bg-card p-7 shadow-soft hover:shadow-elevated transition-all duration-300"
             >
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="grid place-items-center w-10 h-10 rounded-xl bg-gradient-primary text-primary-foreground shadow-glow mb-4">
-                <f.icon className="w-5 h-5" />
+              <div className="grid place-items-center w-12 h-12 rounded-3xl bg-gradient-primary text-primary-foreground shadow-glow mb-5">
+                <feature.icon className="w-5 h-5" />
               </div>
-              <h3 className="font-display text-lg font-semibold leading-tight">{f.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+              <h3 className="font-display text-xl font-semibold mb-3">{feature.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{feature.desc}</p>
+              <div className="mt-6 rounded-3xl bg-background/90 border border-border/60 p-4 text-sm text-muted-foreground">
+                <span className="font-semibold text-foreground">Outcome</span>
+                <p className="mt-2 leading-relaxed">{feature.preview}</p>
+              </div>
             </motion.div>
           ))}
         </div>

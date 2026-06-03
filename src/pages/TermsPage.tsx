@@ -2,37 +2,71 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const sections = [
+  { id: "acceptance", label: "Acceptance of Terms" },
+  { id: "about", label: "About Xplainfy" },
+  { id: "eligibility", label: "Eligibility" },
+  { id: "accounts", label: "User Accounts" },
+  { id: "use", label: "Acceptable Use" },
+  { id: "ai-content", label: "AI-Generated Content" },
+  { id: "disclaimer", label: "Professional Advice Disclaimer" },
+  { id: "payments", label: "Subscriptions and Payments" },
+  { id: "intellectual", label: "Intellectual Property" },
+  { id: "user-content", label: "User Content" },
+  { id: "availability", label: "Service Availability" },
+  { id: "suspension", label: "Account Suspension" },
+  { id: "liability", label: "Limitation of Liability" },
+  { id: "governing", label: "Governing Law" },
+  { id: "contact", label: "Contact Us" },
+];
+
 const TermsPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar onDownloadClick={() => {}} />
       <main>
         <section className="py-24 md:py-32">
-          <div className="container">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-4xl mx-auto"
-            >
-              <div className="text-center mb-16">
-                <span className="text-sm font-semibold uppercase tracking-wider text-primary">Legal</span>
-                <h1 className="mt-3 font-display text-4xl md:text-5xl font-bold">Xplainfy Terms of Service</h1>
-                <p className="mt-4 text-muted-foreground text-lg">
-                  The rules and guidelines for using the Xplainfy platform.
-                </p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Last updated: May 30, 2026
-                </p>
-              </div>
+          <div className="container grid gap-12 lg:grid-cols-[260px_1fr]">
+            <aside className="hidden lg:block sticky top-24 self-start rounded-3xl border border-border/70 bg-card p-6 shadow-soft">
+              <div className="text-sm font-semibold uppercase tracking-wider text-primary mb-4">On this page</div>
+              <nav className="space-y-3 text-sm text-muted-foreground">
+                {sections.map((section) => (
+                  <a
+                    key={section.id}
+                    href={`#${section.id}`}
+                    className="block rounded-2xl px-3 py-2 transition hover:bg-primary/10 hover:text-foreground"
+                  >
+                    {section.label}
+                  </a>
+                ))}
+              </nav>
+            </aside>
+
+            <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="max-w-4xl"
+              >
+                <div className="text-center mb-16">
+                  <span className="text-sm font-semibold uppercase tracking-wider text-primary">Legal</span>
+                  <h1 className="mt-3 font-display text-4xl md:text-5xl font-bold">Xplainfy Terms of Service</h1>
+                  <p className="mt-4 text-muted-foreground text-lg">
+                    The rules and guidelines for using the Xplainfy platform.
+                  </p>
+                  <p className="mt-2 text-sm text-muted-foreground">Last updated: May 30, 2026</p>
+                </div>
+              </motion.div>
 
               <div className="space-y-12">
                 <motion.div
+                  id="acceptance"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">1. Acceptance of Terms</h2>
                   <p className="text-muted-foreground leading-relaxed">
@@ -41,11 +75,12 @@ const TermsPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="about"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">2. About Xplainfy</h2>
                   <p className="text-muted-foreground leading-relaxed">
@@ -54,11 +89,12 @@ const TermsPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="eligibility"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.12 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">3. Eligibility</h2>
                   <p className="text-muted-foreground leading-relaxed">
@@ -67,11 +103,12 @@ const TermsPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="accounts"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.13 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">4. User Accounts</h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">To access certain features, you may be required to create an account. You agree to:</p>
@@ -84,11 +121,12 @@ const TermsPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="use"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.14 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">5. Acceptable Use</h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">You agree not to use Xplainfy to:</p>
@@ -103,11 +141,12 @@ const TermsPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="ai-content"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.15 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">6. AI-Generated Content</h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">
@@ -122,11 +161,12 @@ const TermsPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="disclaimer"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">7. Professional Advice Disclaimer</h2>
                   <p className="text-muted-foreground leading-relaxed">
@@ -135,11 +175,12 @@ const TermsPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="payments"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.25 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">8. Subscriptions and Payments</h2>
                   <p className="text-muted-foreground leading-relaxed">
@@ -148,11 +189,12 @@ const TermsPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="intellectual"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.26 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">9. Intellectual Property</h2>
                   <p className="text-muted-foreground leading-relaxed">
@@ -161,11 +203,12 @@ const TermsPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="user-content"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.27 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">10. User Content</h2>
                   <p className="text-muted-foreground leading-relaxed">
@@ -174,11 +217,12 @@ const TermsPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="availability"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.28 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">11. Service Availability</h2>
                   <p className="text-muted-foreground leading-relaxed">
@@ -187,11 +231,12 @@ const TermsPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="suspension"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.29 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">12. Account Suspension</h2>
                   <p className="text-muted-foreground leading-relaxed">
@@ -200,40 +245,12 @@ const TermsPage = () => {
                 </motion.div>
 
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.31 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
-                >
-                  <h2 className="font-display text-2xl font-semibold mb-4">14. Disclaimer of Warranties</h2>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Xplainfy is provided "as is" and "as available". We make no warranties regarding accuracy, reliability, or fitness for a particular purpose, except where prohibited by law.
-                  </p>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.32 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
-                >
-                  <h2 className="font-display text-2xl font-semibold mb-4">15. Privacy & 16. Changes</h2>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    Your use of Xplainfy is also governed by our Privacy Policy. 
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    We may update these Terms from time to time. Continued use after changes constitutes acceptance of the revised Terms.
-                  </p>
-                </motion.div>
-
-                <motion.div
+                  id="liability"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">13. Limitation of Liability</h2>
                   <p className="text-muted-foreground leading-relaxed">
@@ -242,11 +259,12 @@ const TermsPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="governing"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.35 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">17. Governing Law</h2>
                   <p className="text-muted-foreground leading-relaxed">
@@ -255,11 +273,12 @@ const TermsPage = () => {
                 </motion.div>
 
                 <motion.div
+                  id="contact"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.4 }}
-                  className="rounded-2xl bg-card border border-border/70 shadow-soft p-8"
+                  className="rounded-3xl bg-card border border-border/70 shadow-soft p-8"
                 >
                   <h2 className="font-display text-2xl font-semibold mb-4">18. Contact Us</h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">
@@ -270,7 +289,7 @@ const TermsPage = () => {
                   </div>
                 </motion.div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       </main>
