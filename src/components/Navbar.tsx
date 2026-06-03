@@ -45,7 +45,7 @@ const Navbar = ({ onDownloadClick }: NavbarProps) => {
           <img src={logo} alt="Xplainfy" className="w-10 h-10 rounded-2xl shadow-glow" />
           <div>
             <div className="font-display text-lg font-bold tracking-tight">Xplainfy</div>
-            <div className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">AI reasoning</div>
+            <div className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">Anything Explained</div>
           </div>
         </NavLink>
 
