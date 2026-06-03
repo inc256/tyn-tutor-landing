@@ -68,7 +68,7 @@ const InsightsSection: React.FC = () => {
     <section id="insights" className="py-16 md:py-24 bg-background relative">
       <div className="container">
         <div className="max-w-3xl mx-auto text-center mb-8">
-          <h2 className="font-display text-3xl md:text-4xl font-bold">Insights & Examples</h2>
+          <h2 className="font-display text-3xl md:text-4xl font-bold">App Insights</h2>
           <p className="mt-3 text-muted-foreground">Interactive examples that show how Xplainfy turns inputs into structured outputs.</p>
         </div>
 

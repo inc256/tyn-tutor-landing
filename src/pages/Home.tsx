@@ -13,10 +13,10 @@ const Home = () => {
       <Navbar onDownloadClick={() => {}} />
       <main>
         <Hero />
+        <InsightsSection />
         <BeforeAfterSection />
         <Product />
         <ExampleOutputs />
-        <InsightsSection />
         <SocialProofSection />
       </main>
       <Footer />
