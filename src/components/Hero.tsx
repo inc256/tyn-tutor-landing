@@ -32,19 +32,19 @@ const Hero = () => {
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Button variant="hero" size="xl" asChild>
-                <a href="https://app.xplainfy.net" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">
-                  <Globe className="w-5 h-5" />
-                  Try the Web App
-                </a>
-              </Button>
-              <Button variant="outline" size="xl" asChild className="w-full sm:w-auto">
-                <a href="#product" className="inline-flex items-center gap-2">
-                  Explore the product
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </Button>
-            </div>
+               <Button variant="hero" size="xl" asChild>
+                 <a href="https://app.xplainfy.net" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">
+                   <Globe className="w-5 h-5" />
+                   Try the Web App
+                 </a>
+               </Button>
+               <Button variant="outline" size="xl" asChild className="w-full sm:w-auto">
+                 <a href="/downloads" className="inline-flex items-center gap-2">
+                   Explore All Devices
+                   <ArrowRight className="w-4 h-4" />
+                 </a>
+               </Button>
+             </div>
 
             <p className="mt-4 text-sm uppercase tracking-[0.3em] text-muted-foreground">
               For engineers, researchers, consultants, analysts, learners and business teams.

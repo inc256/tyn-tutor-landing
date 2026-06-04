@@ -10,6 +10,7 @@ const links = [
   { label: "Product", href: "/product" },
   { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "/contact" },
+  { label: "Downloads", href: "/downloads" },
 ];
 
 interface NavbarProps {
