@@ -28,14 +28,14 @@ const Hero = () => {
             </div>
 
             <p className="mt-8 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              The workflow platform for professionals who research, reason, solve, and deliver reports—not just answers.
+              A workspace for professionals who research, think through complex problems, build solutions, and create reports with confidence.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
               <Button variant="hero" size="xl" asChild>
                 <a href="https://app.xplainfy.net" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">
                   <Globe className="w-5 h-5" />
-                  Start solving problems
+                  Try the Web App
                 </a>
               </Button>
               <Button variant="outline" size="xl" asChild className="w-full sm:w-auto">
@@ -63,34 +63,34 @@ const Hero = () => {
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <div className="space-y-2">
                     <div className="h-2.5 w-20 rounded-full bg-primary/60" />
-                    <div className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">Workflow preview</div>
+                    <div className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">How Xplainfy Works</div>
                   </div>
                 </div>
 
                 <div className="mt-8 rounded-[1.75rem] border border-border/50 bg-background/90 p-6 shadow-sm backdrop-blur-lg">
-                  <div className="grid gap-5 lg:grid-cols-3">
-                    <div className="rounded-3xl border border-border/70 bg-card p-5 text-sm text-muted-foreground">
-                      <p className="font-semibold text-foreground">Question</p>
-                      <p className="mt-3 leading-relaxed">
-                        Define the problem with the exact context, goals, and constraints that matter.
-                      </p>
-                    </div>
+  <div className="grid gap-5 lg:grid-cols-3">
+    <div className="rounded-3xl border border-border/70 bg-card p-5 text-sm text-muted-foreground">
+      <p className="font-semibold text-foreground">Research</p>
+      <p className="mt-3 leading-relaxed">
+        Gather context, evidence, and relevant information from multiple perspectives.
+      </p>
+    </div>
 
-                    <div className="rounded-3xl border border-border/70 bg-card p-5 text-sm text-muted-foreground">
-                      <p className="font-semibold text-foreground">Reasoning</p>
-                      <p className="mt-3 leading-relaxed">
-                        Follow a structured path of evidence, logic, and decision points for every conclusion.
-                      </p>
-                    </div>
+    <div className="rounded-3xl border border-border/70 bg-card p-5 text-sm text-muted-foreground">
+      <p className="font-semibold text-foreground">Think</p>
+      <p className="mt-3 leading-relaxed">
+        Apply structured reasoning to connect ideas, evaluate options, and solve complex problems.
+      </p>
+    </div>
 
-                    <div className="rounded-3xl border border-border/70 bg-card p-5 text-sm text-muted-foreground">
-                      <p className="font-semibold text-foreground">Report</p>
-                      <p className="mt-3 leading-relaxed">
-                        Export a clean, professional summary with the full research, reasoning, and recommendation.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+    <div className="rounded-3xl border border-border/70 bg-card p-5 text-sm text-muted-foreground">
+      <p className="font-semibold text-foreground">Report</p>
+      <p className="mt-3 leading-relaxed">
+        Generate professional reports that clearly explain the research, reasoning, and final outcome.
+      </p>
+    </div>
+  </div>
+</div>
               </div>
             </div>
           </motion.div>

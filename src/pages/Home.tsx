@@ -15,7 +15,6 @@ const Home = () => {
         <Hero />
         <InsightsSection />
         <ExampleOutputs />
-        <SocialProofSection />
       </main>
       <Footer />
     </div>
