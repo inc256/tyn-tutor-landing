@@ -49,17 +49,6 @@ const Hero = () => {
             <p className="mt-4 text-sm uppercase tracking-[0.3em] text-muted-foreground">
               For engineers, researchers, consultants, analysts, learners and business teams.
             </p>
-
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-3xl border border-border/60 bg-card/80 p-5 shadow-soft">
-                <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Trusted by</p>
-                <p className="mt-3 text-lg font-semibold text-foreground">Teams across engineering, healthcare, and research.</p>
-              </div>
-              <div className="rounded-3xl border border-border/60 bg-card/80 p-5 shadow-soft">
-                <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Built for</p>
-                <p className="mt-3 text-lg font-semibold text-foreground">Structured thinking, repeatable workflows, and enterprise-ready outputs.</p>
-              </div>
-            </div>
           </motion.div>
 
           <motion.div
