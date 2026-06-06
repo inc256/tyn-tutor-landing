@@ -44,7 +44,7 @@ const plans: Plan[] = [
     name: "Starter",
     price: "$4",
     period: "one-time",
-    tagline: "1,000 Credits",
+    tagline: "500 Credits",
     description: "A flexible plan for teams testing structured reasoning workflows.",
     features: [
       "1000 credits (one-time)",
