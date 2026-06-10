@@ -30,7 +30,7 @@ const plans: Plan[] = [
     tagline: "Trying out Xplainfy",
     description: "Start with core reasoning workflows and basic report generation.",
     features: [
-      "20 daily credits for 30 days",
+      "10 daily credits for 30 days",
       "Structured question framing",
       "Basic workflow summaries",
       "Standard response speed",
