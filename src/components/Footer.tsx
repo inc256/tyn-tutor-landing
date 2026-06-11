@@ -18,13 +18,14 @@ const Footer = () => {
 
         <div>
           <div className="text-sm font-semibold mb-3">Product</div>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/" className="hover:text-foreground">Home</Link></li>
-            <li><Link to="/pricing" className="hover:text-foreground">Pricing</Link></li>
-            <li><Link to="/downloads" className="hover:text-foreground">Downloads</Link></li>
-            <li><Link to="/privacy" className="hover:text-foreground">Privacy</Link></li>
-            <li><Link to="/terms" className="hover:text-foreground">Terms</Link></li>
-          </ul>
+<ul className="space-y-2 text-sm text-muted-foreground">
+             <li><Link to="/" className="hover:text-foreground">Home</Link></li>
+             <li><Link to="/pricing" className="hover:text-foreground">Pricing</Link></li>
+             <li><Link to="/downloads" className="hover:text-foreground">Downloads</Link></li>
+             <li><Link to="/privacy" className="hover:text-foreground">Privacy</Link></li>
+             <li><Link to="/terms" className="hover:text-foreground">Terms</Link></li>
+             <li><Link to="/refund" className="hover:text-foreground">Refund Policy</Link></li>
+           </ul>
         </div>
       </div>
          <div className="border-t border-border/60">
