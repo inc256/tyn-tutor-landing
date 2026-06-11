@@ -98,7 +98,7 @@ const plans: Plan[] = [
 
 const comparisonFeatures = [
   { name: "Daily Access", tooltip: "Access to Xplainfy platform", free: "✓", starter: "✓", pro: "✓", ultra: "✓" },
-  { name: "Credits", tooltip: "AI credits for processing requests", free: "20/day", starter: "1,000", pro: "Unlimited", ultra: "Unlimited" },
+  { name: "Credits", tooltip: "AI credits for processing requests", free: "10/day", starter: "500", pro: "Unlimited", ultra: "Unlimited" },
   { name: "Presentation Generation", tooltip: "Generate presentations from research", free: "✗", starter: "✓", pro: "✓", ultra: "✓" },
   { name: "Advanced Research", tooltip: "Deep research capabilities with citations", free: "✗", starter: "✗", pro: "✓", ultra: "✓" },
   { name: "AI Image Responses", tooltip: "Generate and analyze images with AI", free: "✗", starter: "✗", pro: "✗", ultra: "✓" },
