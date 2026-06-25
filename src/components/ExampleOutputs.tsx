@@ -1,3 +1,4 @@
+// ExampleOutputs.tsx (White mode)
 import { motion } from "framer-motion";
 import { ClipboardList, FileSearch, Sparkles } from "lucide-react";
 
@@ -32,7 +33,7 @@ const examples = [
 ];
 
 const ExampleOutputs = () => (
-  <section id="outputs" className="py-24 md:py-32 bg-background">
+  <section id="outputs" className="py-24 md:py-32 bg-white">
     <div className="container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -41,11 +42,11 @@ const ExampleOutputs = () => (
         transition={{ duration: 0.6 }}
         className="max-w-3xl mx-auto text-center"
       >
-        <span className="text-sm font-semibold uppercase tracking-wider text-primary">Example outputs</span>
-        <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold tracking-tight">
+        <span className="text-sm font-semibold uppercase tracking-wider text-blue-600">Example outputs</span>
+        <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
           Real workflow results, not just feature descriptions
         </h2>
-        <p className="mt-4 text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
+        <p className="mt-4 text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
           Each example shows how Xplainfy turns a question into research, reasoning, and a usable recommendation.
         </p>
       </motion.div>
@@ -58,7 +59,7 @@ const ExampleOutputs = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: index * 0.08 }}
-            className="rounded-3xl border border-border/70 bg-card p-6 shadow-soft hover:shadow-elevated transition-all duration-300"
+            className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg transition-all duration-300"
           >
             <div className={`inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r ${example.color} px-3 py-2 text-white mb-5`}>
               <Sparkles className="w-4 h-4" />
@@ -66,33 +67,33 @@ const ExampleOutputs = () => (
             </div>
 
             <div className="space-y-4">
-              <div className="rounded-2xl bg-background/90 p-4 border border-border/50">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Question</p>
-                <p className="mt-3 text-sm font-medium leading-snug">{example.input}</p>
+              <div className="rounded-2xl bg-gray-50 p-4 border border-gray-200">
+                <p className="text-xs uppercase tracking-[0.2em] text-gray-500">Question</p>
+                <p className="mt-3 text-sm font-medium leading-snug text-gray-900">{example.input}</p>
               </div>
 
-              <div className="rounded-2xl bg-background/90 p-4 border border-border/50">
-                <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+              <div className="rounded-2xl bg-gray-50 p-4 border border-gray-200">
+                <div className="flex items-center gap-2 text-sm font-semibold text-blue-600">
                   <FileSearch className="w-4 h-4" />
                   Research
                 </div>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{example.research}</p>
+                <p className="mt-2 text-sm text-gray-600 leading-relaxed">{example.research}</p>
               </div>
 
-              <div className="rounded-2xl bg-background/90 p-4 border border-border/50">
-                <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+              <div className="rounded-2xl bg-gray-50 p-4 border border-gray-200">
+                <div className="flex items-center gap-2 text-sm font-semibold text-blue-600">
                   <Sparkles className="w-4 h-4" />
                   Reasoning
                 </div>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{example.reasoning}</p>
+                <p className="mt-2 text-sm text-gray-600 leading-relaxed">{example.reasoning}</p>
               </div>
 
-              <div className="rounded-2xl bg-background/90 p-4 border border-border/50">
-                <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+              <div className="rounded-2xl bg-gray-50 p-4 border border-gray-200">
+                <div className="flex items-center gap-2 text-sm font-semibold text-blue-600">
                   <ClipboardList className="w-4 h-4" />
                   Final report
                 </div>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{example.report}</p>
+                <p className="mt-2 text-sm text-gray-600 leading-relaxed">{example.report}</p>
               </div>
             </div>
           </motion.div>

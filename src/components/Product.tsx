@@ -1,3 +1,4 @@
+// Product.tsx (White mode)
 import { motion } from "framer-motion";
 import { Brain, Search, FileText, Workflow, Globe, Edit3 } from "lucide-react";
 
@@ -42,7 +43,7 @@ const features = [
 
 const Product = () => {
   return (
-    <section id="product" className="py-24 md:py-32 bg-background">
+    <section id="product" className="py-24 md:py-32 bg-white">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,11 +52,11 @@ const Product = () => {
           transition={{ duration: 0.6 }}
           className="max-w-2xl mx-auto text-center"
         >
-          <span className="text-sm font-semibold uppercase tracking-wider text-primary">Workflow stages</span>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold tracking-tight">
+          <span className="text-sm font-semibold uppercase tracking-wider text-blue-600">Workflow stages</span>
+          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
             Every stage is designed to move you from question to decision.
           </h2>
-          <p className="mt-4 text-muted-foreground text-lg leading-relaxed">
+          <p className="mt-4 text-gray-600 text-lg leading-relaxed">
             See how Xplainfy turns complex problems into evidence-backed reasoning, actionable solutions, and polished reports.
           </p>
         </motion.div>
@@ -69,15 +70,15 @@ const Product = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
               whileHover={{ y: -6 }}
-              className="group flex h-full flex-col rounded-3xl border border-border/70 bg-card p-7 shadow-soft hover:shadow-elevated transition-all duration-300"
+              className="group flex h-full flex-col rounded-3xl border border-gray-200 bg-white p-7 shadow-sm hover:shadow-lg transition-all duration-300"
             >
-              <div className="grid place-items-center w-12 h-12 rounded-3xl bg-gradient-primary text-primary-foreground shadow-glow mb-5">
+              <div className="grid place-items-center w-12 h-12 rounded-3xl bg-blue-600 text-white shadow-lg mb-5">
                 <feature.icon className="w-5 h-5" />
               </div>
-              <h3 className="font-display text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{feature.desc}</p>
-              <div className="mt-6 rounded-3xl bg-background/90 border border-border/60 p-4 text-sm text-muted-foreground">
-                <span className="font-semibold text-foreground">Outcome</span>
+              <h3 className="font-display text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
+              <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
+              <div className="mt-6 rounded-3xl bg-gray-50 border border-gray-200 p-4 text-sm text-gray-600">
+                <span className="font-semibold text-gray-900">Outcome</span>
                 <p className="mt-2 leading-relaxed">{feature.preview}</p>
               </div>
             </motion.div>

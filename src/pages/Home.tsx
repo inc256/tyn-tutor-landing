@@ -4,6 +4,8 @@ import BeforeAfterSection from "@/components/BeforeAfterSection";
 import Product from "@/components/Product";
 import InsightsSection from "@/components/InsightsSection";
 import SocialProofSection from "@/components/SocialProofSection";
+import FAQSection from "@/components/FAQSection";
+import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
 const Home = () => {
@@ -13,6 +15,8 @@ const Home = () => {
         <main>
          <Hero />
          <InsightsSection />
+         <FAQSection />
+         <CTASection />
        </main>
       <Footer />
     </div>

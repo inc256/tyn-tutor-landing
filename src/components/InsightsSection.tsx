@@ -1,3 +1,4 @@
+// InsightsSection.tsx (All white background, visible text)
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -65,15 +66,15 @@ const InsightsSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="insights" className="py-16 md:py-24 bg-background relative">
+    <section id="insights" className="py-16 md:py-24 bg-white relative">
       <div className="container">
         <div className="max-w-3xl mx-auto text-center mb-8">
-          <h2 className="font-display text-3xl md:text-4xl font-bold">App Insights</h2>
-          <p className="mt-3 text-muted-foreground">Interactive examples that show how Xplainfy turns inputs into structured outputs.</p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-gray-900">App Insights</h2>
+          <p className="mt-3 text-gray-600">Interactive examples that show how Xplainfy turns inputs into structured outputs.</p>
         </div>
 
         <div ref={containerRef} className="mx-auto max-w-6xl">
-          <div className="relative rounded-2xl bg-card/95 border border-border/50 shadow-elevated overflow-hidden">
+          <div className="relative rounded-2xl bg-white border border-gray-200 shadow-lg overflow-hidden">
             {/* Screenshot hero */}
             <div className="p-6 md:p-8 flex flex-col md:flex-row items-start gap-6">
               <div className="flex-1 flex items-center justify-center">
@@ -99,19 +100,19 @@ const InsightsSection: React.FC = () => {
 
               <div className="md:w-80 flex-shrink-0">
                 <div className="flex items-center justify-between">
-                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20">{slides[index].tag}</span>
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200">{slides[index].tag}</span>
                   <div className="flex items-center gap-2">
-                    <button onClick={prev} aria-label="Previous" className="p-2 rounded-md bg-background/60 hover:bg-primary/5 transition">
-                      <ChevronLeft className="w-5 h-5 text-foreground" />
+                    <button onClick={prev} aria-label="Previous" className="p-2 rounded-md bg-gray-100 hover:bg-gray-200 transition text-gray-700">
+                      <ChevronLeft className="w-5 h-5" />
                     </button>
-                    <button onClick={next} aria-label="Next" className="p-2 rounded-md bg-background/60 hover:bg-primary/5 transition">
-                      <ChevronRight className="w-5 h-5 text-foreground" />
+                    <button onClick={next} aria-label="Next" className="p-2 rounded-md bg-gray-100 hover:bg-gray-200 transition text-gray-700">
+                      <ChevronRight className="w-5 h-5" />
                     </button>
                   </div>
                 </div>
 
-                <h3 className="mt-6 font-display text-xl font-bold">{slides[index].title}</h3>
-                <p className="mt-2 text-muted-foreground">{slides[index].description}</p>
+                <h3 className="mt-6 font-display text-xl font-bold text-gray-900">{slides[index].title}</h3>
+                <p className="mt-2 text-gray-600">{slides[index].description}</p>
 
                 <div className="mt-6 flex items-center gap-3">
                   {slides.map((_, i) => (
@@ -119,7 +120,7 @@ const InsightsSection: React.FC = () => {
                       key={i}
                       onClick={() => goTo(i)}
                       aria-label={`Go to slide ${i + 1}`}
-                      className={`w-3 h-3 rounded-full transition ${i === index ? "bg-gradient-to-r from-primary to-primary-glow w-7 h-2.5 rounded-full" : "bg-border"}`}
+                      className={`w-3 h-3 rounded-full transition ${i === index ? "bg-blue-600 w-7 h-2.5 rounded-full" : "bg-gray-300"}`}
                     />
                   ))}
                 </div>

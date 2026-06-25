@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
+import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import DownloadModal from "@/components/DownloadModal";
 
@@ -12,6 +13,7 @@ const ContactPage = () => {
       <Navbar onDownloadClick={() => setModalOpen(true)} />
       <main>
         <Contact />
+        <FAQSection />
       </main>
       <Footer />
       <DownloadModal open={modalOpen} onClose={() => setModalOpen(false)} />

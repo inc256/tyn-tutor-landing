@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Downloads from "@/components/Downloads";
+import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 
 const DownloadsPage = () => {
@@ -8,6 +9,7 @@ const DownloadsPage = () => {
       <Navbar />
       <main>
         <Downloads />
+        <FAQSection />
       </main>
       <Footer />
     </div>
