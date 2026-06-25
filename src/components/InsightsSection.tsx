@@ -29,8 +29,8 @@ const slides = [
   {
     id: "history-research",
     desktop: {
-      title: "History Research",
-      description: "Open a research file inside history and continue your investigation with full context.",
+      title: "Ask Anything",
+      description: "Research, think through complex problems, build solutions, and create reports with confidence.",
       image: Desktop_2,
     },
     mobile: {
