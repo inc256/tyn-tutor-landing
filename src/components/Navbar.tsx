@@ -1,4 +1,3 @@
-// Navbar.tsx (with Policies dropdown)
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -36,30 +35,24 @@ const Navbar = ({ onDownloadClick }: NavbarProps) => {
   }, []);
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
-    `px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-      isActive ? "bg-blue-50 text-blue-700" : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+    `px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+      isActive ? "bg-slate-100 text-slate-900" : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
     }`;
 
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
-        scrolled
-          ? "bg-white border-b border-gray-200 shadow-sm"
-          : "bg-white"
-      }`}
-    >
-      <nav className="container flex items-center justify-between h-16 md:h-20">
+    <header className={`fixed inset-x-0 top-0 z-40 border-b border-slate-200/80 backdrop-blur-sm transition-all ${scrolled ? "bg-white/90 shadow-sm" : "bg-white/90"}`}>
+      <nav className="container flex h-16 items-center justify-between md:h-20">
         <NavLink to="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl overflow-hidden shadow-md ring-2 ring-blue-100/50">
-            <img src={logo} alt="Xplainfy" className="w-full h-full object-cover" />
+          <div className="h-9 w-9 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+            <img src={logo} alt="Xplainfy" className="h-full w-full object-cover" />
           </div>
           <div>
-            <div className="font-display text-lg font-bold tracking-tight text-gray-900">Xplainfy</div>
-            <div className="text-[11px] uppercase tracking-[0.3em] text-gray-500">Anything Explained</div>
+            <div className="text-base font-semibold tracking-[-0.04em] text-slate-900">Xplainfy</div>
+            <div className="text-[10px] uppercase tracking-[0.22em] text-slate-500">Anything Explained</div>
           </div>
         </NavLink>
 
-        <ul className="hidden md:flex items-center gap-2">
+        <ul className="hidden items-center gap-1 md:flex">
           {links.map((link) => (
             <li key={link.href}>
               <NavLink to={link.href} className={linkClass}>
@@ -67,23 +60,22 @@ const Navbar = ({ onDownloadClick }: NavbarProps) => {
               </NavLink>
             </li>
           ))}
-          {/* Policies Dropdown */}
           <li className="relative">
             <button
               onClick={() => setPoliciesOpen(!policiesOpen)}
-              className="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 text-gray-700 hover:text-gray-900 hover:bg-gray-50 inline-flex items-center gap-1"
+              className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-50 hover:text-slate-900"
             >
               Policies
-              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${policiesOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`h-4 w-4 transition-transform ${policiesOpen ? "rotate-180" : ""}`} />
             </button>
             <AnimatePresence>
               {policiesOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: -10 }}
+                  initial={{ opacity: 0, y: -8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-xl shadow-lg py-2"
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.18 }}
+                  className="absolute left-0 top-full mt-2 w-56 rounded-xl border border-slate-200 bg-white p-2 shadow-soft"
                 >
                   {policyLinks.map((policy) => (
                     <NavLink
@@ -91,8 +83,8 @@ const Navbar = ({ onDownloadClick }: NavbarProps) => {
                       to={policy.href}
                       onClick={() => setPoliciesOpen(false)}
                       className={({ isActive }) =>
-                        `block px-4 py-2 text-sm transition-colors ${
-                          isActive ? "bg-blue-50 text-blue-700" : "text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                        `block rounded-md px-3 py-2 text-sm transition-colors ${
+                          isActive ? "bg-slate-100 text-slate-900" : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
                         }`
                       }
                     >
@@ -105,24 +97,24 @@ const Navbar = ({ onDownloadClick }: NavbarProps) => {
           </li>
         </ul>
 
-        <div className="hidden md:flex items-center gap-3">
-          <Button 
-            size="sm" 
-            asChild 
-            className="bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:shadow-lg transition-all duration-200"
+        <div className="hidden items-center gap-3 md:flex">
+          <Button
+            size="sm"
+            asChild
+            className="bg-blue-600 text-white hover:bg-blue-700"
           >
-            <a href="https://app.xplainfy.net" target="_blank" rel="noopener noreferrer">
-              Start Exploring
+            <a href="/downloads">
+              Start exploring
             </a>
           </Button>
         </div>
 
         <button
-          className="md:hidden p-2 rounded-xl border border-gray-200 bg-white text-gray-700 shadow-sm"
+          className="rounded-lg border border-slate-200 bg-white p-2 text-slate-700 md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
-          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </nav>
 
@@ -132,9 +124,9 @@ const Navbar = ({ onDownloadClick }: NavbarProps) => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden overflow-hidden bg-white border-t border-gray-200"
+            className="border-t border-slate-200 bg-white md:hidden"
           >
-            <div className="container py-4 flex flex-col gap-3">
+            <div className="container flex flex-col gap-2 py-4">
               {links.map((link) => (
                 <NavLink
                   key={link.href}
@@ -145,16 +137,16 @@ const Navbar = ({ onDownloadClick }: NavbarProps) => {
                   {link.label}
                 </NavLink>
               ))}
-              <div className="border-t border-gray-200 pt-3">
-                <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 px-4 mb-2">Policies</p>
+              <div className="border-t border-slate-200 pt-3">
+                <p className="mb-2 px-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">Policies</p>
                 {policyLinks.map((policy) => (
                   <NavLink
                     key={policy.href}
                     to={policy.href}
                     onClick={() => setOpen(false)}
                     className={({ isActive }) =>
-                      `block px-4 py-2 text-sm transition-colors ${
-                        isActive ? "bg-blue-50 text-blue-700" : "text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                      `block rounded-md px-3 py-2 text-sm transition-colors ${
+                        isActive ? "bg-slate-100 text-slate-900" : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
                       }`
                     }
                   >
@@ -163,12 +155,10 @@ const Navbar = ({ onDownloadClick }: NavbarProps) => {
                 ))}
               </div>
               <a
-                href="https://app.xplainfy.net"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-md hover:bg-blue-700 transition"
+                href="/downloads"
+                className="mt-2 inline-flex items-center justify-center rounded-lg bg-blue-600 px-4 py-3 text-sm font-semibold text-white hover:bg-blue-700"
               >
-                Start Exploring
+                Start exploring
               </a>
             </div>
           </motion.div>

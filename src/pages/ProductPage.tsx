@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Product from "@/components/Product";
 import FAQSection from "@/components/FAQSection";
-import ExampleOutputs from "@/components/ExampleOutputs";
 import Footer from "@/components/Footer";
 
 const ProductPage = () => {
@@ -10,7 +9,6 @@ const ProductPage = () => {
       <Navbar />
       <main>
         <Product />
-        <ExampleOutputs />
         <FAQSection />
       </main>
       <Footer />

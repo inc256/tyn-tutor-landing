@@ -18,7 +18,7 @@ const Downloads = () => {
           <span className="text-sm font-semibold uppercase tracking-wider text-blue-600">Downloads</span>
           <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold text-gray-900">Download Xplainfy</h2>
           <p className="mt-4 text-gray-600 text-lg">
-            Access Xplainfy on any platform—desktop, mobile, or web. Start instantly, anywhere you work.
+            Download Xplainfy for your device—iOS, Android, macOS, and Windows.
           </p>
         </motion.div>
 

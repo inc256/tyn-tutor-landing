@@ -1,4 +1,4 @@
-import { Globe, Monitor, Smartphone, Apple, Laptop, Terminal } from "lucide-react";
+import { Monitor, Smartphone, Apple, Laptop } from "lucide-react";
 
 export type Platform = {
   id: string;
@@ -12,16 +12,6 @@ export type Platform = {
 };
 
 export const platforms: Platform[] = [
-   {
-     id: "web",
-     name: "Web",
-     icon: Globe,
-     description: "No installation. Start instantly in your browser.",
-     cta: "Open Web App",
-     href: "https://app.xplainfy.net",
-     recommended: true,
-     badge: "Start Instantly",
-   },
   {
     id: "windows",
     name: "Windows",
@@ -30,14 +20,14 @@ export const platforms: Platform[] = [
     cta: "Download .exe",
     href: "#",
   },
-    {
-      id: "android",
-      name: "Android",
-      icon: Smartphone,
-      description: "Download the Android APK directly.",
-      cta: "Download APK",
-      href: "https://www.mediafire.com/file/bq4j7q0jklokld7/app-release.apk/file",
-    },
+  {
+    id: "android",
+    name: "Android",
+    icon: Smartphone,
+    description: "Download the Android APK directly.",
+    cta: "Download APK",
+    href: "https://www.mediafire.com/file/bq4j7q0jklokld7/app-release.apk/file",
+  },
   {
     id: "ios",
     name: "iOS",
@@ -52,14 +42,6 @@ export const platforms: Platform[] = [
     icon: Laptop,
     description: "Universal build for Apple Silicon and Intel.",
     cta: "Download .dmg",
-    href: "#",
-  },
-  {
-    id: "linux",
-    name: "Linux",
-    icon: Terminal,
-    description: "AppImage and .deb packages available.",
-    cta: "Download",
     href: "#",
   },
 ];

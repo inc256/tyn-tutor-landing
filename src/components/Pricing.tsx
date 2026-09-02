@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Check, Sparkles, Zap, Rocket, Crown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { useState } from "react";
 
 type Plan = {
   name: string;
@@ -14,7 +13,6 @@ type Plan = {
   limitations?: string[];
   popular?: boolean;
   icon: React.ReactNode;
-  color: string;
 };
 
 const plans: Plan[] = [
@@ -22,23 +20,22 @@ const plans: Plan[] = [
     name: "Free",
     price: "$0",
     period: "/ month",
-    tagline: "Perfect for getting started",
+    tagline: "For getting started",
     features: [
       "10 daily credits",
       "Structured question framing",
       "Basic workflow summaries",
       "Standard response speed",
-      "Limited document uploads",
-      "Basic export options",
+      "Limited uploads",
+      "Basic exports",
     ],
     icon: <Zap className="w-5 h-5" />,
-    color: "from-gray-500 to-gray-600",
   },
   {
     name: "Basic",
     price: "$4",
     period: "one-time",
-    tagline: "500 Credits",
+    tagline: "500 credits",
     features: [
       "500 credits (one-time)",
       "Expanded research depth",
@@ -49,13 +46,12 @@ const plans: Plan[] = [
     ],
     limitations: ["Credits are consumable"],
     icon: <Sparkles className="w-5 h-5" />,
-    color: "from-blue-500 to-blue-600",
   },
   {
     name: "Pro",
     price: "$9",
     period: "/ month",
-    tagline: "Unlimited",
+    tagline: "Unlimited use",
     features: [
       "Unlimited standard usage",
       "Advanced evidence research",
@@ -66,13 +62,12 @@ const plans: Plan[] = [
     ],
     popular: true,
     icon: <Rocket className="w-5 h-5" />,
-    color: "from-purple-500 to-purple-600",
   },
   {
     name: "Ultra",
     price: "$20",
     period: "/ month",
-    tagline: "Maximum AI Power",
+    tagline: "For advanced work",
     features: [
       "AI image-powered responses",
       "Long-context processing",
@@ -83,185 +78,136 @@ const plans: Plan[] = [
     ],
     limitations: ["Fair usage policy applies"],
     icon: <Crown className="w-5 h-5" />,
-    color: "from-amber-500 to-amber-600",
   },
 ];
 
-// Your exact original comparison data
 const comparisonFeatures = [
-  { name: "Daily Access", tooltip: "Access to Xplainfy platform", free: "✓", starter: "✓", pro: "✓", ultra: "✓" },
-  { name: "Credits", tooltip: "AI credits for processing requests", free: "10/day", starter: "500", pro: "Unlimited", ultra: "Unlimited" },
-  { name: "Presentation Generation", tooltip: "Generate presentations from research", free: "✗", starter: "✓", pro: "✓", ultra: "✓" },
-  { name: "Advanced Research", tooltip: "Deep research capabilities with citations", free: "✗", starter: "✗", pro: "✓", ultra: "✓" },
-  { name: "AI Image Responses", tooltip: "Generate and analyze images with AI", free: "✗", starter: "✗", pro: "✗", ultra: "✓" },
-  { name: "Long Context Processing", tooltip: "Process large documents and conversations", free: "✗", starter: "✗", pro: "✗", ultra: "✓" },
-  { name: "Upload Limits", tooltip: "Maximum file size and number of uploads", free: "Low", starter: "Moderate", pro: "Limited", ultra: "Unlimited" },
-  { name: "Priority Speed", tooltip: "Faster response times", free: "✗", starter: "✗", pro: "✓", ultra: "✓" },
-  { name: "Highest AI Models", tooltip: "Access to latest and most capable models", free: "✗", starter: "✗", pro: "Partial", ultra: "Full" },
+  { name: "Daily access", free: "✓", starter: "✓", pro: "✓", ultra: "✓" },
+  { name: "Credits", free: "10/day", starter: "500", pro: "Unlimited", ultra: "Unlimited" },
+  { name: "Presentation generation", free: "✗", starter: "✓", pro: "✓", ultra: "✓" },
+  { name: "Advanced research", free: "✗", starter: "✗", pro: "✓", ultra: "✓" },
+  { name: "AI image responses", free: "✗", starter: "✗", pro: "✗", ultra: "✓" },
+  { name: "Long-context processing", free: "✗", starter: "✗", pro: "✗", ultra: "✓" },
+  { name: "Upload limits", free: "Low", starter: "Moderate", pro: "Limited", ultra: "Unlimited" },
+  { name: "Priority speed", free: "✗", starter: "✗", pro: "✓", ultra: "✓" },
+  { name: "Highest AI models", free: "✗", starter: "✗", pro: "Partial", ultra: "Full" },
 ];
 
 const Pricing = () => {
-  const [billing, setBilling] = useState<"monthly" | "annual">("annual");
-
   const renderCell = (value: string) => {
-    if (value === "✓") return <Check className="w-5 h-5 text-green-500 mx-auto" />;
-    if (value === "✗") return <span className="text-gray-300 mx-auto block">—</span>;
-    if (value === "Unlimited") return <span className="text-indigo-600 font-semibold">∞</span>;
-    return <span className="text-sm text-gray-700">{value}</span>;
+    if (value === "✓") return <Check className="mx-auto h-4 w-4 text-emerald-600" />;
+    if (value === "✗") return <span className="mx-auto block text-slate-300">—</span>;
+    if (value === "Unlimited") return <span className="font-semibold text-blue-600">∞</span>;
+    return <span className="text-sm text-slate-700">{value}</span>;
   };
 
   return (
-    <section id="pricing" className="bg-white py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+    <section id="pricing" className="bg-slate-50 py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-3xl text-center"
         >
-          <span className="text-sm font-semibold uppercase tracking-wider text-indigo-600">Pricing</span>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-2 mb-4">
-            Choose the right plan for your work
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">Pricing</p>
+          <h2 className="mt-4 text-4xl font-semibold tracking-[-0.06em] text-slate-900 md:text-5xl">
+            Choose the plan that fits the work.
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From individual learners to research teams and businesses, Explainfy scales with your needs.
+          <p className="mt-5 text-base leading-7 text-slate-600 md:text-lg">
+            Flexible enough for personal research, and mature enough for serious team workflows.
           </p>
         </motion.div>
 
-        {/* Billing Toggle */}
-        {/* <div className="flex flex-wrap justify-center items-center gap-4 mb-16">
-          <div className="flex bg-gray-100 rounded-full p-1">
-            <button
-              onClick={() => setBilling("monthly")}
-              className={`px-8 py-2.5 text-sm font-semibold rounded-full transition-all ${
-                billing === "monthly"
-                  ? "bg-white text-gray-900 shadow-sm"
-                  : "text-gray-500 hover:text-gray-700"
-              }`}
-            >
-              Monthly
-            </button>
-            <button
-              onClick={() => setBilling("annual")}
-              className={`px-8 py-2.5 text-sm font-semibold rounded-full transition-all ${
-                billing === "annual"
-                  ? "bg-white text-gray-900 shadow-sm"
-                  : "text-gray-500 hover:text-gray-700"
-              }`}
-            >
-              Annual
-            </button>
-          </div>
-          <Badge className="bg-indigo-50 text-indigo-600 border-0 px-3 py-1.5 text-xs font-semibold">
-            Save 40%
-          </Badge>
-        </div> */}
-
-        {/* Pricing Cards - Redesigned to match original layout */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className={`relative rounded-2xl border bg-white p-6 transition-all duration-300 ${
-                plan.popular
-                  ? "border-indigo-500 shadow-xl scale-105 ring-2 ring-indigo-500/20 z-10"
-                  : "border-gray-200 shadow-sm hover:shadow-lg"
+              transition={{ duration: 0.45, delay: index * 0.05 }}
+              className={`relative rounded-2xl border bg-white p-6 shadow-sm ${
+                plan.popular ? "border-blue-600 ring-1 ring-blue-100" : "border-slate-200"
               }`}
             >
               {plan.popular && (
-                <>
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-indigo-600 text-white border-0 px-4 py-1 text-xs font-semibold rounded-full">
-                      Most Popular
-                    </Badge>
-                  </div>
-                  <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-t-2xl" />
-                </>
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <Badge className="border-0 bg-blue-600 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-white">
+                    Most popular
+                  </Badge>
+                </div>
               )}
 
-              <div className="mt-2">
-                <div className={`inline-flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-to-br ${plan.color} text-white shadow-md mb-4`}>
-                  {plan.icon}
-                </div>
-
-                <h3 className="text-xl font-bold text-gray-900">{plan.name}</h3>
-                
-                <div className="mt-3">
-                  <span className="text-3xl font-bold text-gray-900">{plan.price}</span>
-                  {plan.period && <span className="text-sm text-gray-500 ml-1">{plan.period}</span>}
-                </div>
-                <p className="text-sm text-gray-500 mt-1">{plan.tagline}</p>
-
-                <Button
-                  asChild
-                  className={`w-full mt-6 ${
-                    plan.popular
-                      ? "bg-indigo-600 hover:bg-indigo-700 text-white"
-                      : "bg-gray-900 hover:bg-gray-800 text-white"
-                  } transition-all duration-200 font-semibold shadow-sm hover:shadow-md`}
-                >
-                  <Link to="/downloads">
-                    {plan.name === "Free" ? "Start Free" : "Start Exploring"}
-                  </Link>
-                </Button>
-
-                <hr className="my-6 border-gray-200" />
-
-                <ul className="space-y-3 text-sm">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2.5 text-gray-700">
-                      <Check className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {plan.limitations && (
-                  <div className="mt-4 rounded-lg bg-gray-50 border border-gray-200 p-2.5 text-xs text-gray-600">
-                    <span className="font-semibold">Note:</span> {plan.limitations[0]}
-                  </div>
-                )}
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-100 text-slate-900">
+                {plan.icon}
               </div>
+
+              <h3 className="mt-5 text-2xl font-semibold text-slate-900">{plan.name}</h3>
+              <div className="mt-4 flex items-end gap-2">
+                <span className="text-4xl font-semibold tracking-[-0.05em] text-slate-900">{plan.price}</span>
+                {plan.period && <span className="pb-1 text-sm text-slate-500">{plan.period}</span>}
+              </div>
+              <p className="mt-2 text-sm text-slate-500">{plan.tagline}</p>
+
+              <Button
+                asChild
+                className={`mt-6 w-full ${
+                  plan.popular ? "bg-blue-600 text-white hover:bg-blue-700" : "bg-slate-900 text-white hover:bg-slate-800"
+                }`}
+              >
+                <Link to="/downloads">{plan.name === "Free" ? "Get started" : "Start exploring"}</Link>
+              </Button>
+
+              <ul className="mt-6 space-y-3 text-sm text-slate-700">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-3">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {plan.limitations && (
+                <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-600">
+                  {plan.limitations[0]}
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
 
-        {/* Feature Comparison Table - Using your exact original data */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-gray-50 rounded-2xl border border-gray-200 p-6 md:p-8"
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mt-20 overflow-hidden rounded-2xl border border-slate-200 bg-white"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">Compare all features</h3>
-          <p className="text-gray-600 mb-8">See exactly what you get with each plan.</p>
-          
+          <div className="border-b border-slate-200 px-6 py-5 md:px-8">
+            <h3 className="text-2xl font-semibold text-slate-900">Compare plans</h3>
+          </div>
+
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse text-sm">
-              <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="text-left py-3 px-4 font-semibold text-gray-900">Features</th>
-                  <th className="text-center py-3 px-4 font-semibold text-gray-900">Free</th>
-                  <th className="text-center py-3 px-4 font-semibold text-gray-900">Basic</th>
-                  <th className="text-center py-3 px-4 font-semibold text-gray-900 text-indigo-600">Pro</th>
-                  <th className="text-center py-3 px-4 font-semibold text-gray-900">Ultra</th>
+            <table className="min-w-full text-left text-sm">
+              <thead className="bg-slate-50">
+                <tr>
+                  <th className="px-6 py-4 font-medium text-slate-600 md:px-8">Feature</th>
+                  <th className="px-6 py-4 font-medium text-slate-600 md:px-8">Free</th>
+                  <th className="px-6 py-4 font-medium text-slate-600 md:px-8">Basic</th>
+                  <th className="px-6 py-4 font-medium text-blue-600 md:px-8">Pro</th>
+                  <th className="px-6 py-4 font-medium text-slate-600 md:px-8">Ultra</th>
                 </tr>
               </thead>
               <tbody>
                 {comparisonFeatures.map((feature, idx) => (
-                  <tr key={idx} className="border-b border-gray-100 hover:bg-white/50 transition">
-                    <td className="py-3 px-4 font-medium text-gray-900">{feature.name}</td>
-                    <td className="py-3 px-4 text-center">{renderCell(feature.free)}</td>
-                    <td className="py-3 px-4 text-center">{renderCell(feature.starter)}</td>
-                    <td className="py-3 px-4 text-center">{renderCell(feature.pro)}</td>
-                    <td className="py-3 px-4 text-center">{renderCell(feature.ultra)}</td>
+                  <tr key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-slate-50/50"}>
+                    <td className="px-6 py-4 font-medium text-slate-800 md:px-8">{feature.name}</td>
+                    <td className="px-6 py-4 text-center md:px-8">{renderCell(feature.free)}</td>
+                    <td className="px-6 py-4 text-center md:px-8">{renderCell(feature.starter)}</td>
+                    <td className="px-6 py-4 text-center font-medium text-blue-600 md:px-8">{renderCell(feature.pro)}</td>
+                    <td className="px-6 py-4 text-center md:px-8">{renderCell(feature.ultra)}</td>
                   </tr>
                 ))}
               </tbody>

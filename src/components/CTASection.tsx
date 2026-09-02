@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CTASection: React.FC = () => {
   return (
@@ -32,10 +33,13 @@ const CTASection: React.FC = () => {
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button 
                 size="lg"
+                asChild
                 className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/25 hover:shadow-blue-600/35 transition-all duration-200 text-base px-8 py-6"
               >
-                Start Exploring — It's Free
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <Link to="/downloads" className="inline-flex items-center gap-2">
+                  Start Exploring — It's Free
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </Button>
             </div>
 

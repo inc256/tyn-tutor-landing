@@ -1,130 +1,123 @@
-// Hero.tsx (All white background, visible text)
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Globe, ArrowRight, Sparkles, Zap, Shield } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
+import Desktop_1 from "@/images/Mockup_Desktop_1.png?url";
+import Mobile_1 from "@/images/Mockup_Android_1.png?url";
 
 const Hero = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 12 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
+  const visualVariants = {
+    hidden: { opacity: 0, x: 24, scale: 0.97 },
+    visible: { opacity: 1, x: 0, scale: 1, transition: { duration: 0.6, delay: 0.08 } },
+  };
+
   return (
-    <section id="home" className="relative overflow-hidden py-28 md:py-32 bg-white">
-      {/* Decorative blobs - very subtle */}
-      <div className="pointer-events-none absolute -top-24 -left-24 w-96 h-96 rounded-full bg-blue-100/30 blur-3xl" />
-      <div className="pointer-events-none absolute top-16 -right-32 w-[28rem] h-[28rem] rounded-full bg-purple-100/30 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[40rem] h-[40rem] rounded-full bg-blue-100/20 blur-3xl" />
-
-      <div className="container relative">
-        <div className="flex flex-col items-center text-center">
+    <section id="home" className="relative overflow-hidden bg-slate-50 min-h-screen flex items-center pt-20 lg:pt-24">
+      <div className="container">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.3fr] lg:gap-16 lg:items-center">
+          {/* LEFT COLUMN: TEXT & BUTTONS */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-6"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            className="flex flex-col"
           >
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight"
-          >
-            <span className="text-gray-900">Anything Explained</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-6 text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl"
-          >
-            A workspace for professionals who research, think through complex problems, 
-            build solutions, and create reports with confidence.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center"
-          >
-            <Button 
-              size="xl" 
-              asChild
-              className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/25 hover:shadow-blue-600/35 transition-all duration-200"
+            <motion.h1
+              variants={itemVariants}
+              className="text-5xl font-semibold tracking-[-0.06em] text-slate-900 md:text-6xl"
             >
-              <a 
-                href="https://app.xplainfy.net" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="inline-flex items-center gap-2"
+              Anything explained.
+            </motion.h1>
+
+            <motion.p
+              variants={itemVariants}
+              className="mt-6 text-lg leading-7 text-slate-600 md:text-xl"
+            >
+              Start with a question, build the evidence, and turn complex work into a clear answer your team can use.
+            </motion.p>
+
+            <motion.div
+              variants={itemVariants}
+              className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
+            >
+              <Button
+                size="lg"
+                asChild
+                className="bg-blue-600 text-white hover:bg-blue-700"
               >
-                <Globe className="w-5 h-5" />
-                Start Exploring — It's Free
-              </a>
-            </Button>
-            <Button 
-              size="xl" 
-              asChild 
-              className="w-full sm:w-auto bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-200"
-            >
-              <a href="/downloads" className="inline-flex items-center gap-2">
-                View Downloads
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </Button>
+                <a href="/downloads" className="inline-flex items-center gap-2">
+                  <Download className="h-4 w-4" />
+                  Start exploring
+                </a>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                asChild
+                className="border-slate-200 bg-white text-slate-700 hover:bg-slate-50"
+              >
+                <a href="/product" className="inline-flex items-center gap-2">
+                  See workflow
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+            </motion.div>
           </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-8 text-xs uppercase tracking-[0.3em] text-gray-500"
-          >
-            For engineers, researchers, consultants, analysts, learners and business teams
-          </motion.p>
-
+          {/* RIGHT COLUMN: PRODUCT MOCKUPS */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.4 }}
-            className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl w-full"
+            variants={visualVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            className="hidden lg:flex justify-end"
           >
-            <div className="rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow duration-200 p-6 text-left">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 rounded-xl bg-blue-50 text-blue-600">
-                  <Shield className="w-5 h-5" />
-                </div>
-                <p className="font-semibold text-gray-900">Research</p>
+            <div className="relative w-full max-w-2xl flex gap-4 items-center justify-end">
+              {/* Desktop View: Show Android Image */}
+              <div className="rounded-xl overflow-hidden shadow-soft border border-slate-200">
+                <img
+                  src={Mobile_1}
+                  alt="Xplainfy Mobile"
+                  className="w-full h-auto max-w-sm"
+                  loading="lazy"
+                />
               </div>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Gather context, evidence, and relevant information from multiple perspectives.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow duration-200 p-6 text-left">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 rounded-xl bg-blue-50 text-blue-600">
-                  <Zap className="w-5 h-5" />
-                </div>
-                <p className="font-semibold text-gray-900">Think</p>
-              </div>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Apply structured reasoning to connect ideas, evaluate options, and solve complex problems.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow duration-200 p-6 text-left">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 rounded-xl bg-blue-50 text-blue-600">
-                  <Sparkles className="w-5 h-5" />
-                </div>
-                <p className="font-semibold text-gray-900">Report</p>
-              </div>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Generate professional reports that clearly explain the research, reasoning, and final outcome.
-              </p>
             </div>
           </motion.div>
 
+          {/* MOBILE VIEW: Show Desktop Image */}
+          <motion.div
+            variants={visualVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            className="lg:hidden"
+          >
+            <div className="rounded-xl overflow-hidden shadow-soft border border-slate-200">
+              <img
+                src={Desktop_1}
+                alt="Xplainfy Desktop"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
