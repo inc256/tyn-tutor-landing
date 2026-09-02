@@ -215,7 +215,7 @@ const RefundPage = () => {
                     To request a refund or report a billing issue, please contact:
                   </p>
                   <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                    <p className="text-gray-900 font-medium">Email: lunainc256@gmail.com</p>
+                    <p className="text-gray-900 font-medium">Email: xplainfyai@gmail.com</p>
                   </div>
                   <p className="text-gray-600 leading-relaxed mt-4">Please include:</p>
                   <ul className="text-gray-600 leading-relaxed space-y-2 ml-6 list-disc mt-2">

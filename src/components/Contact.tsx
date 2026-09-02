@@ -20,14 +20,14 @@ const Contact = () => {
     try {
       const subject = encodeURIComponent(`Contact from website: ${name}`);
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-      window.location.href = `mailto:lunainc256@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:xplainfyai@gmail.com?subject=${subject}&body=${body}`;
 
       setStatus("Opening your email client...");
       setName("");
       setEmail("");
       setMessage("");
     } catch (err) {
-      setStatus("There was an error. Please try again or contact us directly at lunainc256@gmail.com");
+      setStatus("There was an error. Please try again or contact us directly at xplainfyai@gmail.com");
     } finally {
       setSending(false);
     }

@@ -267,7 +267,7 @@ const TermsPage = () => {
                     If you have questions regarding these Terms of Service, please contact:
                   </p>
                   <div className="bg-muted/50 rounded-lg p-4">
-                    <p className="text-foreground font-medium">Email: lunainc256@gmail.com</p>
+                    <p className="text-foreground font-medium">Email: xplainfyai@gmail.com</p>
                   </div>
                 </motion.div>
               </div>
