@@ -1,8 +1,46 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download } from "lucide-react";
+import Android_1 from "@/images/Mockup_Android_1.png?url";
+import Android_2 from "@/images/Mockup_Android_2.png?url";
+import Android_3 from "@/images/Mockup_Android_3.png?url";
 import Desktop_1 from "@/images/Mockup_Desktop_1.png?url";
-import Mobile_1 from "@/images/Mockup_Android_1.png?url";
+import Desktop_2 from "@/images/Mockup_Desktop_2.png?url";
+import Desktop_3 from "@/images/Mockup_Desktop_3.png?url";
+
+const androidSlides = [Android_1, Android_2, Android_3];
+const desktopSlides = [Desktop_1, Desktop_2, Desktop_3];
+
+const HeroSlideshow = ({ slides, alt, className = "" }: { slides: string[]; alt: string; className?: string }) => {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveSlide((currentSlide) => (currentSlide + 1) % slides.length);
+    }, 4000);
+
+    return () => window.clearInterval(interval);
+  }, [slides.length]);
+
+  return (
+    <div className={`relative grid ${className}`}>
+      <AnimatePresence initial={false} mode="wait">
+        <motion.img
+          key={slides[activeSlide]}
+          src={slides[activeSlide]}
+          alt={alt}
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "-100%" }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+          className="col-start-1 row-start-1 w-full h-auto"
+          loading="lazy"
+        />
+      </AnimatePresence>
+    </div>
+  );
+};
 
 const Hero = () => {
   const containerVariants = {
@@ -89,19 +127,14 @@ const Hero = () => {
             className="hidden lg:flex justify-end"
           >
             <div className="relative w-full max-w-2xl flex gap-4 items-center justify-end">
-              {/* Desktop View: Show Android Image */}
+              {/* Desktop View: Show Android Slideshow */}
               <div className="rounded-xl overflow-hidden shadow-soft border border-slate-200">
-                <img
-                  src={Mobile_1}
-                  alt="Xplainfy Mobile"
-                  className="w-full h-auto max-w-sm"
-                  loading="lazy"
-                />
+                <HeroSlideshow slides={androidSlides} alt="Xplainfy Mobile" className="max-w-sm" />
               </div>
             </div>
           </motion.div>
 
-          {/* MOBILE VIEW: Show Desktop Image */}
+          {/* MOBILE VIEW: Show Desktop Slideshow */}
           <motion.div
             variants={visualVariants}
             initial="hidden"
@@ -110,12 +143,7 @@ const Hero = () => {
             className="lg:hidden"
           >
             <div className="rounded-xl overflow-hidden shadow-soft border border-slate-200">
-              <img
-                src={Desktop_1}
-                alt="Xplainfy Desktop"
-                className="w-full h-auto"
-                loading="lazy"
-              />
+              <HeroSlideshow slides={desktopSlides} alt="Xplainfy Desktop" />
             </div>
           </motion.div>
         </div>
