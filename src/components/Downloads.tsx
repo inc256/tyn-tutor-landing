@@ -18,7 +18,7 @@ const Downloads = () => {
           <span className="text-sm font-semibold uppercase tracking-wider text-blue-600">Downloads</span>
           <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold text-gray-900">Download Xplainfy</h2>
           <p className="mt-4 text-gray-600 text-lg">
-            Download Xplainfy for your device—iOS, Android, macOS, and Windows.
+            Download Xplainfy for your device. For iOS, Android, macOS, and Windows.
           </p>
         </motion.div>
 
@@ -54,7 +54,7 @@ const Downloads = () => {
                 <p className={`mt-2 text-sm leading-relaxed flex-1 ${
                   isPrimary ? "text-white/85" : "text-gray-600"
                 }`}>
-                  {isPrimary ? "No installation required — start instantly in your browser." : p.description}
+                  {isPrimary ? "No installation required. Start instantly in your browser." : p.description}
                 </p>
                  {p.href === "#" ? (
                   <Button variant="outline" size="lg" className="mt-6 w-full" disabled>

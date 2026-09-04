@@ -37,7 +37,7 @@ const CTASection: React.FC = () => {
                 className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/25 hover:shadow-blue-600/35 transition-all duration-200 text-base px-8 py-6"
               >
                 <Link to="/downloads" className="inline-flex items-center gap-2">
-                  Start Exploring — It's Free
+                  Start Exploring
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </Button>
