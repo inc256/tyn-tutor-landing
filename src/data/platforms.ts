@@ -26,7 +26,7 @@ export const platforms: Platform[] = [
     icon: Smartphone,
     description: "Download the Android APK directly.",
     cta: "Download APK",
-    href: "https://www.mediafire.com/file/bq4j7q0jklokld7/app-release.apk/file",
+    href: "#",
   },
   {
     id: "ios",

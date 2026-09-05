@@ -3,8 +3,11 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { platforms } from "@/data/platforms";
 import { Button } from "@/components/ui/button";
+import { useLatestAndroidRelease } from "@/hooks/use-latest-android-release";
 
 const Downloads = () => {
+  const { apkUrl, version, loading } = useLatestAndroidRelease();
+
   return (
     <section id="downloads" className="py-24 md:py-32 bg-white">
       <div className="container">
@@ -26,6 +29,9 @@ const Downloads = () => {
           {platforms.map((p, i) => {
             const Icon = p.icon;
             const isPrimary = p.recommended;
+            const isAndroid = p.id === "android";
+            const href = isAndroid ? apkUrl : p.href;
+            const isUnavailable = isAndroid && !loading && !apkUrl;
             return (
               <motion.div
                 key={p.id}
@@ -56,9 +62,13 @@ const Downloads = () => {
                 }`}>
                   {isPrimary ? "No installation required. Start instantly in your browser." : p.description}
                 </p>
-                 {p.href === "#" ? (
+                 {p.href === "#" && !isAndroid ? (
                   <Button variant="outline" size="lg" className="mt-6 w-full" disabled>
                     Coming Soon
+                  </Button>
+                ) : isAndroid && !href ? (
+                  <Button variant="outline" size="lg" className="mt-6 w-full" disabled>
+                    {isUnavailable ? "APK unavailable" : "Checking latest APK..."}
                   </Button>
                 ) : (
                   <Button
@@ -67,8 +77,8 @@ const Downloads = () => {
                     className={`mt-6 w-full ${isPrimary ? "bg-white text-blue-600 hover:bg-gray-100" : "bg-blue-600 hover:bg-blue-700 text-white"}`}
                     asChild
                   >
-                    <a href={p.href} target="_blank" rel="noopener noreferrer">
-                      {isPrimary ? "Open Now" : p.cta}
+                    <a href={href} target="_blank" rel="noopener noreferrer" download={isAndroid}>
+                      {isPrimary ? "Open Now" : `${p.cta}${version ? ` ${version}` : ""}`}
                       <ArrowRight className="w-4 h-4" />
                     </a>
                   </Button>
